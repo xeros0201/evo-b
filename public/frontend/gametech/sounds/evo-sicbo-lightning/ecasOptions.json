@@ -1,0 +1,2810 @@
+{
+  "soundConfig": {
+    "buses": [
+      {
+        "id": "effects",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "voice",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "music",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "master",
+        "destination": "OUTPUT",
+        "inserts": []
+      },
+      {
+        "id": "WetEffects",
+        "destination": "effects",
+        "inserts": [
+          {
+            "insertType": "ReverbConvolverInsert",
+            "id": "reverb",
+            "impulseResponse": "template_ir",
+            "dryGain": 1,
+            "wetGain": 0.12
+          },
+          {
+            "insertType": "PingPongDelayInsert",
+            "id": "pingpong",
+            "delayTimeLeft": 0.573,
+            "delayTimeRight": 0.553,
+            "dryGain": 1,
+            "wetGain": 0.2,
+            "feedback": 0.3,
+            "maxDelayTime": 0.6
+          },
+          {
+            "insertType": "BiquadFilterInsert",
+            "id": "wetfilter",
+            "frequency": 1200,
+            "type": "highshelf",
+            "Q": 1,
+            "gain": -10
+          }
+        ]
+      },
+      {
+        "id": "DelayedEffects",
+        "destination": "effects",
+        "inserts": [
+          {
+            "insertType": "PingPongDelayInsert",
+            "id": "pingpong",
+            "delayTimeLeft": 0.563,
+            "delayTimeRight": 0.75,
+            "dryGain": 1,
+            "wetGain": 0.2,
+            "feedback": 0.3,
+            "maxDelayTime": 0.75
+          }
+        ]
+      },
+      {
+        "id": "breakbeatz",
+        "volume": 0,
+        "destination": "music",
+        "inserts": [
+          {
+            "insertType": "PingPongDelayInsert",
+            "id": "pingpong2",
+            "delayTimeLeft": 0.75,
+            "delayTimeRight": 0.563,
+            "dryGain": 1,
+            "wetGain": 0.2,
+            "feedback": 0.3,
+            "maxDelayTime": 0.75
+          }
+        ]
+      },
+      {
+        "id": "IntenseMusic",
+        "volume": 0,
+        "destination": "music"
+      },
+      {
+        "id": "MusicFilterDelay",
+        "volume": 0.5,
+        "destination": "music",
+        "inserts": [
+          {
+            "insertType": "DelayInsert",
+            "id": "delayfilter",
+            "delayTime": 0.75,
+            "cutoff": 1750,
+            "dryGain": 1,
+            "wetGain": 0.4,
+            "feedback": 0.7,
+            "maxDelayTime": 0.75
+          },
+          {
+            "insertType": "BiquadFilterInsert",
+            "id": "MusicFilterDelayShelf",
+            "frequency": 1200,
+            "type": "highshelf",
+            "Q": 1.2,
+            "gain": -16
+          }
+        ]
+      }
+    ],
+    "buffers": {
+      "relax": {
+        "destinationName": "music",
+        "sourceName": "relax",
+        "stealerName": "relax",
+        "gain": 0,
+        "loop": true,
+        "offset": [
+          [
+            0,
+            85
+          ]
+        ],
+        "highpass": 50,
+        "envelopes": {
+          "gain": {
+            "points": [
+              {
+                "pos": 0,
+                "val": 0
+              },
+              {
+                "pos": 5000,
+                "val": 0.65
+              }
+            ],
+            "curve": "s-curve"
+          }
+        }
+      },
+      "intensity": {
+        "destinationName": "IntenseMusic",
+        "sourceName": "intensity",
+        "stealerName": "intensity",
+        "gain": 0,
+        "loop": true,
+        "maxWaitTime": 0
+      },
+      "pulsepad": {
+        "destinationName": "IntenseMusic",
+        "sourceName": "pulsepad",
+        "stealerName": "pulsepad",
+        "gain": 0,
+        "loop": true,
+        "maxWaitTime": 0
+      },
+      "IR": {
+        "destinationName": "effects",
+        "sourceName": "template_ir"
+      },
+      "lightningfee1": {
+        "destinationName": "WetEffects",
+        "sourceName": "lightningfee",
+        "highpass": 100,
+        "gain": 0.5
+      },
+      "lightningfee2": {
+        "destinationName": "WetEffects",
+        "sourceName": "lightningfee",
+        "gain": 0.6,
+        "reverse": true,
+        "initialDelay": [
+          0.2,
+          0.3,
+          0.4
+        ],
+        "highpass": 200,
+        "playbackRate": 0.5
+      },
+      "lightningfee3": {
+        "destinationName": "WetEffects",
+        "sourceName": "lightningfee",
+        "gain": [
+          [
+            0.5,
+            1
+          ]
+        ],
+        "reverse": true,
+        "initialDelay": [
+          [
+            0.1,
+            0.5
+          ]
+        ],
+        "playbackRate": 2
+      },
+      "lightningfeeloop": {
+        "destinationName": "WetEffects",
+        "sourceName": "lightningfeeloop",
+        "stealerName": "lightningfeeloop",
+        "gain": 0.5,
+        "fadeIn": 1,
+        "detune": 200,
+        "loop": true
+      },
+      "charged": {
+        "destinationName": "WetEffects",
+        "sourceName": "xlb_charge_loop",
+        "stealerName": "charged",
+        "gain": 0.5,
+        "detune": -200,
+        "loop": true
+      },
+      "chargeintro": {
+        "destinationName": "WetEffects",
+        "sourceName": "xlb_charge_loop_intro",
+        "highpass": 200,
+        "gain": 0.1
+      },
+      "chargeoutro": {
+        "destinationName": "WetEffects",
+        "sourceName": "xlb_charge_loop_intro",
+        "gain": 0.7,
+        "reverse": true,
+        "offset": 1.2,
+        "fadeIn": 0.2
+      },
+      "heavystatic": {
+        "destinationName": "effects",
+        "sourceName": "heavystatic",
+        "stealerName": "heavystatic",
+        "gain": 0.23,
+        "loop": true
+      },
+      "smallwin": {
+        "destinationName": "WetEffects",
+        "sourceName": "lightningsicbo_smallwin",
+        "stealerName": "prewin",
+        "gain": 0.4,
+        "syncerName": "160bpm",
+        "beatSync": 1,
+        "beatSyncOffset": 0.65625
+      },
+      "mediumwin": {
+        "destinationName": "WetEffects",
+        "sourceName": "lightningsicbo_mediumwin",
+        "stealerName": "prewin",
+        "gain": 0.4,
+        "syncerName": "160bpm",
+        "beatSync": 1,
+        "beatSyncOffset": 0.65625
+      },
+      "largewin": {
+        "destinationName": "WetEffects",
+        "sourceName": "lightningsicbo_largewin",
+        "stealerName": "prewin",
+        "gain": 0.4,
+        "syncerName": "160bpm",
+        "beatSync": 1,
+        "beatSyncOffset": 0.65625
+      },
+      "hitbetlightning": {
+        "destinationName": "effects",
+        "sourceName": "sicbo_lightningwin",
+        "gain": 0.15,
+        "detune": 300,
+        "syncerName": "160bpm",
+        "beatSync": 2,
+        "fadeIn": 0.2
+      },
+      "lightningwin": {
+        "destinationName": "effects",
+        "sourceName": "sicbo_lightningwin",
+        "gain": 0.4,
+        "fadeIn": 0.2,
+        "syncerName": "160bpm",
+        "beatSync": 1,
+        "beatSyncOffset": 0.5625
+      },
+      "wincoins_small": {
+        "destinationName": "WetEffects",
+        "sourceName": "wincoins_small",
+        "gain": 0.3
+      },
+      "wincoins_medium": {
+        "destinationName": "WetEffects",
+        "sourceName": "wincoins_medium",
+        "gain": 0.3
+      },
+      "wincoins_big": {
+        "destinationName": "WetEffects",
+        "sourceName": "wincoins_big",
+        "gain": 0.3
+      },
+      "prewin": {
+        "destinationName": "effects",
+        "sourceName": "prewin",
+        "stealerName": "prewin",
+        "gain": 0.6
+      },
+      "chipwin": {
+        "destinationName": "WetEffects",
+        "sourceName": "chipwin",
+        "gain": 0.4
+      }
+    },
+    "containers": {
+      "lightningstrikes": {
+        "destinationName": "WetEffects",
+        "strategy": "random-standard",
+        "avoidRepeatingLast": 2,
+        "gain": 0.5,
+        "voices": [
+          {
+            "sourceName": "lightningstrike01"
+          },
+          {
+            "sourceName": "lightningstrike02"
+          },
+          {
+            "sourceName": "lightningstrike03"
+          },
+          {
+            "sourceName": "lightningstrike04"
+          }
+        ]
+      },
+      "thunder": {
+        "destinationName": "effects",
+        "strategy": "random-standard",
+        "avoidRepeatingLast": 1,
+        "gain": 0.2,
+        "initialDelay": [
+          [
+            1,
+            2
+          ]
+        ],
+        "detune": [
+          [
+            -300,
+            0
+          ]
+        ],
+        "voices": [
+          {
+            "sourceName": "thunder01"
+          },
+          {
+            "sourceName": "thunder02"
+          },
+          {
+            "sourceName": "thunder03"
+          }
+        ]
+      },
+      "hitbet": {
+        "destinationName": "WetEffects",
+        "strategy": "sequence-restart",
+        "gain": 0.3,
+        "voices": [
+          {
+            "sourceName": "hitbet01",
+            "syncerName": "160bpm",
+            "beatSync": 2
+          },
+          {
+            "sourceName": "hitbet02",
+            "syncerName": "160bpm",
+            "beatSync": 2
+          }
+        ]
+      },
+      "musicfills": {
+        "destinationName": "effects",
+        "strategy": "random-shuffle",
+        "voices": [
+          {
+            "sourceName": "musicfill01",
+            "syncerName": "160bpm",
+            "stealerName": "musicfills",
+            "gain": 0.1,
+            "lowpass": [
+              [
+                750,
+                2000
+              ]
+            ],
+            "pan": [
+              [
+                -0.4,
+                0.4
+              ]
+            ],
+            "destinationName": "MusicFilterDelay",
+            "initialDelay": [
+              1,
+              2,
+              3
+            ],
+            "beatSync": 0.25,
+            "beatSyncOffset": 7.125
+          },
+          {
+            "sourceName": "musicfill02",
+            "syncerName": "160bpm",
+            "gain": 0.08,
+            "destinationName": "MusicFilterDelay",
+            "beatSync": 0.25,
+            "beatSyncOffset": 6.75,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 300
+                  },
+                  {
+                    "pos": 750,
+                    "val": 1000
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 300
+                  }
+                ],
+                "curve": "s-curve"
+              },
+              "pan": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": -0.5
+                  },
+                  {
+                    "pos": 750,
+                    "val": 0.5
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 0
+                  }
+                ],
+                "curve": "s-curve"
+              }
+            }
+          },
+          {
+            "sourceName": "musicfill03",
+            "syncerName": "160bpm",
+            "stealerName": "musicfills",
+            "gain": 0.09,
+            "lowpass": [
+              [
+                750,
+                1500
+              ]
+            ],
+            "destinationName": "MusicFilterDelay",
+            "initialDelay": [
+              1,
+              2,
+              3
+            ],
+            "beatSync": 0.125,
+            "beatSyncOffset": 5.625
+          },
+          {
+            "sourceName": "musicfill04",
+            "syncerName": "160bpm",
+            "stealerName": "musicfills",
+            "gain": 0.075,
+            "lowpass": [
+              1000,
+              1500,
+              1800
+            ],
+            "pan": [
+              -0.3,
+              0.3
+            ],
+            "destinationName": "MusicFilterDelay",
+            "beatSync": 0.125,
+            "initialDelay": [
+              3,
+              4,
+              5
+            ],
+            "beatSyncOffset": [
+              1.125,
+              0.75
+            ]
+          },
+          {
+            "sourceName": "musicfill04",
+            "syncerName": "160bpm",
+            "stealerName": "musicfills",
+            "gain": 0.075,
+            "lowpass": [
+              1000,
+              1500
+            ],
+            "pan": [
+              [
+                -0.4,
+                0.4
+              ]
+            ],
+            "detune": [
+              0,
+              0,
+              -1200
+            ],
+            "destinationName": "MusicFilterDelay",
+            "beatSync": 0.125,
+            "initialDelay": [
+              3,
+              4,
+              5
+            ],
+            "beatSyncOffset": [
+              1.125,
+              0.75
+            ]
+          },
+          {
+            "sourceName": "musicfill05",
+            "syncerName": "160bpm",
+            "stealerName": "musicfills",
+            "gain": 0.2,
+            "lowpass": [
+              [
+                750,
+                1500
+              ]
+            ],
+            "pan": [
+              -0.3,
+              0.3
+            ],
+            "destinationName": "MusicFilterDelay",
+            "beatSync": 0.25,
+            "initialDelay": [
+              3,
+              5,
+              7
+            ],
+            "beatSyncOffset": 1.125
+          },
+          {
+            "sourceName": "musicfill06",
+            "syncerName": "160bpm",
+            "stealerName": "musicfills",
+            "gain": 0.15,
+            "pan": [
+              -0.3,
+              0.3
+            ],
+            "destinationName": "MusicFilterDelay",
+            "offset": [
+              0,
+              1.125
+            ],
+            "initialDelay": [
+              3,
+              4,
+              5
+            ],
+            "beatSync": 0.25,
+            "beatSyncOffset": 1.125,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 500
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 1000
+                  }
+                ],
+                "curve": "exponential"
+              }
+            }
+          },
+          {
+            "sourceName": "musicfill07",
+            "syncerName": "160bpm",
+            "stealerName": "musicfills",
+            "gain": 0.2,
+            "lowpass": [
+              500,
+              1000,
+              1500
+            ],
+            "pan": [
+              -0.3,
+              0.3
+            ],
+            "destinationName": "MusicFilterDelay",
+            "initialDelay": [
+              1,
+              2,
+              3
+            ],
+            "beatSync": 0.125,
+            "beatSyncOffset": 5.25
+          }
+        ]
+      },
+      "breakbeatz": {
+        "destinationName": "breakbeatz",
+        "strategy": "random-standard",
+        "avoidRepeatingLast": 2,
+        "voices": [
+          {
+            "sourceName": "breakbeat03",
+            "stealerName": "breakbeatz",
+            "syncerName": "160bpm",
+            "beatSync": 0.25,
+            "destinationName": "breakbeatz",
+            "gain": 0.15,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 700
+                  },
+                  {
+                    "pos": 1000,
+                    "val": 2000
+                  },
+                  {
+                    "pos": 4000,
+                    "val": 300
+                  }
+                ],
+                "curve": "s-curve"
+              },
+              "highpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 500
+                  },
+                  {
+                    "pos": 1000,
+                    "val": 1800
+                  },
+                  {
+                    "pos": 4000,
+                    "val": 80
+                  }
+                ],
+                "curve": "s-curve"
+              }
+            }
+          },
+          {
+            "sourceName": "breakbeat04",
+            "stealerName": "breakbeatz",
+            "syncerName": "160bpm",
+            "beatSync": 0.25,
+            "destinationName": "breakbeatz",
+            "gain": 0.3,
+            "duration": 3.4,
+            "fadeOut": 0.4,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 300
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 1500
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 500
+                  }
+                ],
+                "curve": "s-curve"
+              },
+              "highpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 100
+                  },
+                  {
+                    "pos": 750,
+                    "val": 1200
+                  },
+                  {
+                    "pos": 750,
+                    "val": 150
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 80
+                  }
+                ],
+                "curve": "s-curve"
+              }
+            }
+          },
+          {
+            "sourceName": "breakbeat05",
+            "stealerName": "breakbeatz",
+            "syncerName": "160bpm",
+            "beatSync": 0.25,
+            "destinationName": "breakbeatz",
+            "gain": 0.3,
+            "duration": 5,
+            "fadeOut": 0.5,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 300
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 1000
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 500
+                  }
+                ],
+                "curve": "s-curve"
+              }
+            }
+          },
+          {
+            "sourceName": "breakbeat06",
+            "stealerName": "breakbeatz",
+            "syncerName": "160bpm",
+            "beatSync": 0.25,
+            "destinationName": "breakbeatz",
+            "gain": 0.2,
+            "duration": 5,
+            "fadeOut": 0.5,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 100
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 750
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 200
+                  }
+                ],
+                "curve": "s-curve"
+              }
+            }
+          },
+          {
+            "sourceName": "breakbeat07",
+            "stealerName": "breakbeatz",
+            "syncerName": "160bpm",
+            "beatSync": 0.25,
+            "destinationName": "breakbeatz",
+            "gain": 0.2,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 100
+                  },
+                  {
+                    "pos": 750,
+                    "val": 1200
+                  },
+                  {
+                    "pos": 2250,
+                    "val": 200
+                  }
+                ],
+                "curve": "s-curve"
+              }
+            }
+          },
+          {
+            "sourceName": "breakbeat05",
+            "stealerName": "breakbeatz",
+            "syncerName": "160bpm",
+            "beatSync": 0.25,
+            "destinationName": "breakbeatz",
+            "gain": 0.1,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 200
+                  },
+                  {
+                    "pos": 2250,
+                    "val": 850
+                  },
+                  {
+                    "pos": 750,
+                    "val": 700
+                  },
+                  {
+                    "pos": 750,
+                    "val": 200
+                  }
+                ],
+                "curve": "s-curve"
+              },
+              "highpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 150
+                  },
+                  {
+                    "pos": 2250,
+                    "val": 750
+                  },
+                  {
+                    "pos": 750,
+                    "val": 500
+                  },
+                  {
+                    "pos": 750,
+                    "val": 190
+                  }
+                ],
+                "curve": "s-curve"
+              },
+              "playbackRate": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 1
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 1
+                  },
+                  {
+                    "pos": 0,
+                    "val": 0.5
+                  },
+                  {
+                    "pos": 1550,
+                    "val": 0.5
+                  },
+                  {
+                    "pos": 0,
+                    "val": 2
+                  },
+                  {
+                    "pos": 700,
+                    "val": 2
+                  },
+                  {
+                    "pos": 0,
+                    "val": 1
+                  }
+                ],
+                "curve": "linear"
+              }
+            }
+          },
+          {
+            "sourceName": "breakbeat03",
+            "stealerName": "breakbeatz",
+            "syncerName": "160bpm",
+            "beatSync": 0.25,
+            "destinationName": "breakbeatz",
+            "gain": 0.25,
+            "envelopes": {
+              "lowpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 400
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 2500
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 800
+                  },
+                  {
+                    "pos": 750,
+                    "val": 300
+                  }
+                ],
+                "curve": "s-curve"
+              },
+              "highpass": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 100
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 2000
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 500
+                  },
+                  {
+                    "pos": 750,
+                    "val": 200
+                  }
+                ],
+                "curve": "s-curve"
+              },
+              "playbackRate": {
+                "points": [
+                  {
+                    "pos": 0,
+                    "val": 0.5
+                  },
+                  {
+                    "pos": 1500,
+                    "val": 0.5
+                  },
+                  {
+                    "pos": 0,
+                    "val": 1
+                  }
+                ],
+                "curve": "linear"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "syncers": {
+      "160bpm": {
+        "tempo": 160,
+        "beatsPerBar": 4,
+        "ticksPerBeat": 4,
+        "lookAhead": 0.02
+      }
+    },
+    "stealers": {
+      "music": {
+        "maxVoices": 1
+      },
+      "breakbeatz": {
+        "minTimeBetween": 1
+      },
+      "musicfills": {
+        "minTimeBetween": 1
+      },
+      "charged": {
+        "maxVoices": 1,
+        "strategy": "kill-newest"
+      },
+      "lightningfeeloop": {
+        "maxVoices": 1,
+        "strategy": "kill-oldest"
+      },
+      "heavystatic": {
+        "maxVoices": 1,
+        "strategy": "kill-newest"
+      },
+      "intensity": {
+        "maxVoices": 1,
+        "strategy": "kill-oldest",
+        "fadeOut": 0.1
+      },
+      "pulsepad": {
+        "maxVoices": 1,
+        "strategy": "kill-oldest",
+        "fadeOut": 0.1
+      },
+      "relax": {
+        "maxVoices": 1,
+        "strategy": "kill-oldest"
+      },
+      "prewin": {
+        "maxVoices": 1,
+        "strategy": "kill-oldest",
+        "initialDelay": 0.3,
+        "fadeOut": 1
+      }
+    }
+  },
+  "eventConfig": [
+    {
+      "id": "timerTick",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "timerTick",
+              "gain": 0.5,
+              "initialDelay": 0.45,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chipstack",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "chipstack",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "placeChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "placeChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "selectChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "selectChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clickingFail",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "startAutoPlay",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "startAutoPlay",
+              "gain": 0.4,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openPopup",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "openPopup",
+              "gain": 0.8,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "undo",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "undo",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeat",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeatDouble",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemPress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeMinRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeMaxRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeIncreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeIncreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorCloseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorOpenRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorClosePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorOpenPress",
+      "actions": []
+    },
+    {
+      "id": "clickUIButton",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_stopall",
+      "actions": [
+        {
+          "type": "bufferStopAll",
+          "args": []
+        },
+        {
+          "type": "bufferStopAll",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_dispose",
+      "actions": [
+        {
+          "type": "dispose",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_volume_voice",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "voice",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_music",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "music",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_effects",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "effects",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_master",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "master",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_device_desktop",
+      "actions": [
+        {
+          "type": "updateMuteBehaviour",
+          "args": [
+            {
+              "muteOnInvisible": false,
+              "pauseOnInvisible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecas-ready",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "relax"
+            }
+          ]
+        },
+        {
+          "type": "loadTheseSounds",
+          "args": [
+            {
+              "ids": [
+                "intensity",
+                "pulsepad",
+                "breakbeat03",
+                "breakbeat04",
+                "breakbeat05",
+                "breakbeat06",
+                "breakbeat07",
+                "musicfill01",
+                "musicfill02",
+                "musicfill03",
+                "musicfill04",
+                "musicfill05",
+                "musicfill06",
+                "musicfill07"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsOpen",
+      "actions": [
+        {
+          "type": "busApplyEnvelopeToFilter",
+          "args": [
+            {
+              "busId": "WetEffects",
+              "insertId": "wetfilter",
+              "paramId": "gain",
+              "points": [
+                {
+                  "pos": 5000,
+                  "val": -12
+                }
+              ],
+              "curve": "linear"
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelope",
+          "args": [
+            {
+              "busId": "breakbeatz",
+              "points": [
+                {
+                  "pos": 8000,
+                  "val": 0
+                }
+              ],
+              "curve": "linear",
+              "paramId": "gain"
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelope",
+          "args": [
+            {
+              "busId": "IntenseMusic",
+              "points": [
+                {
+                  "pos": 8000,
+                  "val": 0
+                }
+              ],
+              "curve": "linear",
+              "paramId": "gain"
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "intensity",
+              "envelopes": {
+                "gain": {
+                  "points": [
+                    {
+                      "pos": 30000,
+                      "val": 0
+                    }
+                  ],
+                  "curve": "s-curve"
+                },
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 3000,
+                      "val": 300
+                    }
+                  ],
+                  "curve": "linear"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "pulsepad",
+              "envelopes": {
+                "gain": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 8000,
+                      "val": 0.45
+                    },
+                    {
+                      "pos": 15000,
+                      "val": 0
+                    }
+                  ],
+                  "curve": "s-curve"
+                },
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 1200,
+                      "val": 2000
+                    }
+                  ],
+                  "curve": "exponential"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "relax",
+              "envelopes": {
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 20000,
+                      "val": 80
+                    }
+                  ],
+                  "curve": "linear"
+                },
+                "lowpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 10000,
+                      "val": 20000
+                    }
+                  ],
+                  "curve": "linear"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsClosedParticipating",
+      "actions": [
+        {
+          "type": "resync",
+          "args": [
+            {
+              "syncerName": "160bpm",
+              "initialDelay": 0.75
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "initialDelay": 0.02,
+              "name": "intensity",
+              "offset": [
+                11.245,
+                23.247,
+                35.244,
+                47.243
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "initialDelay": 0.77,
+              "name": "pulsepad"
+            }
+          ]
+        },
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "thunder"
+            }
+          ]
+        },
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "musicfills"
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelopeToFilter",
+          "args": [
+            {
+              "busId": "WetEffects",
+              "insertId": "wetfilter",
+              "paramId": "gain",
+              "points": [
+                {
+                  "pos": 100,
+                  "val": 0
+                }
+              ],
+              "curve": "linear"
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelope",
+          "args": [
+            {
+              "busId": "breakbeatz",
+              "points": [
+                {
+                  "pos": 1000,
+                  "val": 0.3
+                }
+              ],
+              "curve": "linear",
+              "paramId": "gain"
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelope",
+          "args": [
+            {
+              "busId": "IntenseMusic",
+              "points": [
+                {
+                  "pos": 100,
+                  "val": 1
+                }
+              ],
+              "curve": "linear",
+              "paramId": "gain"
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "intensity",
+              "envelopes": {
+                "gain": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 200,
+                      "val": 0.3
+                    }
+                  ],
+                  "curve": "s-curve"
+                },
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 3000,
+                      "val": 20
+                    }
+                  ],
+                  "curve": "exponential"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "pulsepad",
+              "envelopes": {
+                "gain": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 6000,
+                      "val": 0.1
+                    }
+                  ],
+                  "curve": "s-curve"
+                },
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 8000,
+                      "val": 100
+                    }
+                  ],
+                  "curve": "exponential"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "relax",
+              "envelopes": {
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 2000,
+                      "val": 1500
+                    }
+                  ],
+                  "curve": "logarithmic"
+                },
+                "lowpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 2000,
+                      "val": 5000
+                    }
+                  ],
+                  "curve": "logarithmic"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsClosedJustWatching",
+      "actions": [
+        {
+          "type": "busApplyEnvelope",
+          "args": [
+            {
+              "busId": "breakbeatz",
+              "points": [
+                {
+                  "pos": 1000,
+                  "val": 0
+                }
+              ],
+              "curve": "linear",
+              "paramId": "gain"
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelope",
+          "args": [
+            {
+              "busId": "IntenseMusic",
+              "points": [
+                {
+                  "pos": 100,
+                  "val": 0
+                }
+              ],
+              "curve": "linear",
+              "paramId": "gain"
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "intensity",
+              "envelopes": {
+                "gain": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 3000,
+                      "val": 0.5
+                    },
+                    {
+                      "pos": 3000,
+                      "val": 0.65
+                    }
+                  ],
+                  "curve": "s-curve"
+                },
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 3000,
+                      "val": 20
+                    }
+                  ],
+                  "curve": "exponential"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "pulsepad",
+              "envelopes": {
+                "gain": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 6000,
+                      "val": 0.1
+                    }
+                  ],
+                  "curve": "s-curve"
+                },
+                "highpass": {
+                  "points": [
+                    {
+                      "pos": 0,
+                      "val": "current"
+                    },
+                    {
+                      "pos": 8000,
+                      "val": 100
+                    }
+                  ],
+                  "curve": "exponential"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningFeeAppear",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningfee1"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningfee2"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningfee3"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "chargeintro"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningfeeloop"
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelopeToFilter",
+          "args": [
+            {
+              "busId": "WetEffects",
+              "insertId": "wetfilter",
+              "paramId": "gain",
+              "points": [
+                {
+                  "pos": 500,
+                  "val": 0
+                }
+              ],
+              "curve": "linear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningFeeDisappear",
+      "actions": [
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "lightningfeeloop",
+              "initialDelay": 0.3,
+              "fadeOut": 1
+            }
+          ]
+        },
+        {
+          "type": "busApplyEnvelopeToFilter",
+          "args": [
+            {
+              "busId": "WetEffects",
+              "insertId": "wetfilter",
+              "paramId": "gain",
+              "points": [
+                {
+                  "pos": 1000,
+                  "val": -12
+                }
+              ],
+              "curve": "linear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningStrike",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "lightningstrikes"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "charged"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningStrikeWithBet",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "lightningstrikes"
+            }
+          ]
+        },
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "hitbet"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "hitbetlightning"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "heavystatic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResult",
+      "actions": [
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "charged",
+              "initialDelay": 0.3,
+              "fadeOut": 1
+            }
+          ]
+        },
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "heavystatic",
+              "initialDelay": 0.3,
+              "fadeOut": 1
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "chargeoutro"
+            }
+          ]
+        },
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "lightningfeeloop",
+              "initialDelay": 0.3,
+              "fadeOut": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winSmall",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "breakbeatz"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "smallwin"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "wincoins_small"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "prewin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winMedium",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "breakbeatz"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "mediumwin"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "wincoins_medium"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "prewin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winBig",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "breakbeatz"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "largewin"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "wincoins_big"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "prewin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winLightning",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningwin"
+            }
+          ]
+        },
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "thunder"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chipwin",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "chipwin",
+              "initialDelay": 0.1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateConfig": {
+    "genesis": {
+      "activatesOn": [],
+      "deactivatesOn": [],
+      "events": {
+        "common_volume_master": "common_volume_master",
+        "common_volume_music": "common_volume_music",
+        "common_volume_effects": "common_volume_effects",
+        "common_volume_voice": "common_volume_voice",
+        "common_stopall": "common_stopall",
+        "common_dispose": "common_dispose",
+        "clickUIButton": "clickUIButton",
+        "repeatDouble": "repeatDouble",
+        "repeat": "repeat",
+        "double": "double",
+        "undo": "undo",
+        "openPopup": "openPopup",
+        "startAutoPlay": "startAutoPlay",
+        "clickingFail": "clickingFail",
+        "selectChip": "selectChip",
+        "placeChip": "placeChip",
+        "chipstack": "chipstack",
+        "timerTick": "timerTick",
+        "BetStakeSelectorOpenPress": "BetStakeSelectorOpenPress",
+        "BetStakeSelectorClosePress": "BetStakeSelectorClosePress",
+        "BetStakeSelectorOpenRelease": "BetStakeSelectorOpenRelease",
+        "BetStakeSelectorCloseRelease": "BetStakeSelectorCloseRelease",
+        "BetStakeIncreasePress": "BetStakeIncreasePress",
+        "BetStakeIncreaseRelease": "BetStakeIncreaseRelease",
+        "BetStakeDecreasePress": "BetStakeDecreasePress",
+        "BetStakeDecreaseRelease": "BetStakeDecreaseRelease",
+        "BetStakeMaxRelease": "BetStakeMaxRelease",
+        "BetStakeMinRelease": "BetStakeMinRelease",
+        "BetStakeListItemPress": "BetStakeListItemPress",
+        "BetStakeListItemRelease": "BetStakeListItemRelease",
+        "common_device_desktop": "common_device_desktop",
+        "betsOpen": "betsOpen",
+        "lightningFeeAppear": "lightningFeeAppear",
+        "lightningFeeDisappear": "lightningFeeDisappear",
+        "lightningStrike": "lightningStrike",
+        "lightningStrikeWithBet": "lightningStrikeWithBet",
+        "gameResult": "gameResult",
+        "winSmall": "winSmall",
+        "winMedium": "winMedium",
+        "winBig": "winBig",
+        "winLightning": "winLightning",
+        "chipwin": "chipwin",
+        "betsClosed": {
+          "0": "betsClosedJustWatching",
+          "1": "betsClosedParticipating"
+        }
+      },
+      "children": {}
+    }
+  },
+  "loadrConfig": {
+    "loadPath": "/frontend/gametech/sounds/evo-sicbo-lightning/",
+    "queue": true,
+    "muteOnInvisible": true,
+    "pauseOnInvisible": false,
+    "preload": []
+  },
+  "atlas": {
+    "base": [
+      [
+        "wincoins_small",
+        "48kb.2ch.338897063070334",
+        29051,
+        "_"
+      ],
+      [
+        "musicfill01",
+        "48kb.2ch.137196223336676",
+        180000,
+        "_"
+      ],
+      [
+        "lightningstrike04",
+        "48kb.2ch.616121916174233",
+        70622,
+        "_"
+      ],
+      [
+        "sicbo_smallwin",
+        "48kb.2ch.155633109240828",
+        151560,
+        "_"
+      ],
+      [
+        "lightningsicbo_mediumwin",
+        "48kb.2ch.443929889345319",
+        117000,
+        "_"
+      ],
+      [
+        "lightningsicbo_largewin",
+        "48kb.2ch.493320655010734",
+        130500,
+        "_"
+      ],
+      [
+        "sicbo_lightningwin",
+        "48kb.2ch.353818129697222",
+        185983,
+        "_"
+      ],
+      [
+        "sicbo_largewin",
+        "48kb.2ch.128295015214062",
+        131921,
+        "_"
+      ],
+      [
+        "wincoins_medium",
+        "48kb.2ch.433435880160440",
+        32074,
+        "_"
+      ],
+      [
+        "xlb_charge_loop",
+        "48kb.2ch.870958126886782",
+        185999,
+        "_"
+      ],
+      [
+        "musicfill04",
+        "48kb.2ch.123218960371745",
+        162004,
+        "_"
+      ],
+      [
+        "thunder02",
+        "48kb.2ch.935508352000498",
+        207084,
+        "_"
+      ],
+      [
+        "breakbeat05",
+        "48kb.2ch.166892374142795",
+        288000,
+        "_"
+      ],
+      [
+        "thunder01",
+        "48kb.2ch.119795238353555",
+        240421,
+        "_"
+      ],
+      [
+        "pulsepad",
+        "48kb.2ch.469351405965977",
+        576000,
+        "_"
+      ],
+      [
+        "xlb_charge_loop_intro",
+        "48kb.2ch.775699277221220",
+        94040,
+        "_"
+      ],
+      [
+        "musicfill03",
+        "48kb.2ch.172562028411187",
+        360002,
+        "_"
+      ],
+      [
+        "hitbet01",
+        "48kb.2ch.176812262775244",
+        78755,
+        "_"
+      ],
+      [
+        "breakbeat06",
+        "48kb.2ch.120025661735678",
+        288002,
+        "_"
+      ],
+      [
+        "lightningfeeloop",
+        "48kb.1ch.124996354445116",
+        185999,
+        "_"
+      ],
+      [
+        "musicfill06",
+        "48kb.2ch.143097637374933",
+        234000,
+        "_"
+      ],
+      [
+        "template_ir",
+        "48kb.2ch.142780575111797",
+        168001,
+        "_"
+      ],
+      [
+        "prewin",
+        "48kb.2ch.823791648331215",
+        234286,
+        "_"
+      ],
+      [
+        "intensity",
+        "48kb.2ch.645135551130817",
+        2304000,
+        "_"
+      ],
+      [
+        "sicbo_mediumwin",
+        "48kb.2ch.158658023093494",
+        263051,
+        "_"
+      ],
+      [
+        "lightningfee",
+        "48kb.2ch.140810155361502",
+        48000,
+        "_"
+      ],
+      [
+        "musicfill05",
+        "48kb.2ch.407263219871015",
+        198015,
+        "_"
+      ],
+      [
+        "breakbeat04",
+        "48kb.2ch.165686132584051",
+        287998,
+        "_"
+      ],
+      [
+        "lightningsicbo_smallwin",
+        "48kb.2ch.279056633852826",
+        130501,
+        "_"
+      ],
+      [
+        "relax",
+        "48kb.2ch.359092160992026",
+        4366672,
+        "_"
+      ],
+      [
+        "musicfill02",
+        "48kb.2ch.383969355573926",
+        180000,
+        "_"
+      ],
+      [
+        "breakbeat03",
+        "48kb.2ch.137183604708364",
+        288000,
+        "_"
+      ],
+      [
+        "wincoins_big",
+        "48kb.2ch.943238763099301",
+        85671,
+        "_"
+      ],
+      [
+        "heavystatic",
+        "48kb.2ch.704962383233393",
+        158656,
+        "_"
+      ],
+      [
+        "breakbeat07",
+        "48kb.2ch.699479577097739",
+        288003,
+        "_"
+      ],
+      [
+        "thunder03",
+        "48kb.2ch.122774136351781",
+        234786,
+        "_"
+      ],
+      [
+        "lightningstrike03",
+        "48kb.2ch.114020560806669",
+        80367,
+        "_"
+      ],
+      [
+        "chipwin",
+        "48kb.1ch.184277571948568",
+        26496,
+        "_"
+      ],
+      [
+        "lightningstrike01",
+        "48kb.2ch.625383874969981",
+        83385,
+        "_"
+      ],
+      [
+        "musicfill07",
+        "48kb.2ch.128068301008214",
+        180000,
+        "_"
+      ],
+      [
+        "lightningstrike02",
+        "48kb.2ch.801562646176017",
+        82067,
+        "_"
+      ],
+      [
+        "hitbet02",
+        "48kb.2ch.160650349000710",
+        78264,
+        "_"
+      ]
+    ],
+    "common": [
+      [
+        "startAutoPlay",
+        "48kb.2ch.545640294104874",
+        76487,
+        "_"
+      ],
+      [
+        "clickingFail",
+        "48kb.2ch.893406825221300",
+        57730,
+        "_"
+      ],
+      [
+        "openPopup",
+        "48kb.2ch.894607311533275",
+        87772,
+        "_"
+      ],
+      [
+        "chipstack",
+        "48kb.1ch.681854588810040",
+        44928,
+        "_"
+      ],
+      [
+        "clickUIButton",
+        "48kb.2ch.638981453302355",
+        11520,
+        "_"
+      ],
+      [
+        "undo",
+        "48kb.1ch.860188945556397",
+        12672,
+        "_"
+      ],
+      [
+        "timerTick",
+        "48kb.2ch.872926799387045",
+        32665,
+        "_"
+      ],
+      [
+        "repeatDouble",
+        "48kb.2ch.433700755716254",
+        33653,
+        "_"
+      ],
+      [
+        "selectChip",
+        "48kb.2ch.555630258762553",
+        11285,
+        "_"
+      ],
+      [
+        "placeChip",
+        "48kb.2ch.415093273879412",
+        18775,
+        "_"
+      ]
+    ]
+  },
+  "meta": {
+    "game": "evo-sicbo-lightning",
+    "author": "@fmartinz",
+    "version": "4.1.1",
+    "description": "",
+    "created": "2025-01-02T13:09:27.905Z",
+    "tags": [],
+    "constants": {
+      "sourceNames": [
+        "breakbeat03",
+        "breakbeat04",
+        "breakbeat05",
+        "breakbeat06",
+        "breakbeat07",
+        "chipstack",
+        "chipwin",
+        "clickingFail",
+        "clickUIButton",
+        "heavystatic",
+        "hitbet01",
+        "hitbet02",
+        "intensity",
+        "lightningfee",
+        "lightningfeeloop",
+        "lightningsicbo_largewin",
+        "lightningsicbo_mediumwin",
+        "lightningsicbo_smallwin",
+        "lightningstrike01",
+        "lightningstrike02",
+        "lightningstrike03",
+        "lightningstrike04",
+        "musicfill01",
+        "musicfill02",
+        "musicfill03",
+        "musicfill04",
+        "musicfill05",
+        "musicfill06",
+        "musicfill07",
+        "openPopup",
+        "placeChip",
+        "prewin",
+        "pulsepad",
+        "relax",
+        "repeatDouble",
+        "selectChip",
+        "sicbo_largewin",
+        "sicbo_lightningwin",
+        "sicbo_mediumwin",
+        "sicbo_smallwin",
+        "startAutoPlay",
+        "template_ir",
+        "thunder01",
+        "thunder02",
+        "thunder03",
+        "timerTick",
+        "undo",
+        "wincoins_big",
+        "wincoins_medium",
+        "wincoins_small",
+        "xlb_charge_loop",
+        "xlb_charge_loop_intro"
+      ],
+      "busNames": [
+        "effects",
+        "voice",
+        "music",
+        "master",
+        "WetEffects",
+        "DelayedEffects",
+        "breakbeatz",
+        "IntenseMusic",
+        "MusicFilterDelay"
+      ],
+      "syncerNames": [
+        "160bpm"
+      ],
+      "stealerNames": [
+        "music",
+        "breakbeatz",
+        "musicfills",
+        "charged",
+        "lightningfeeloop",
+        "heavystatic",
+        "intensity",
+        "pulsepad",
+        "relax",
+        "prewin"
+      ],
+      "bufferNames": [
+        "relax",
+        "intensity",
+        "pulsepad",
+        "IR",
+        "lightningfee1",
+        "lightningfee2",
+        "lightningfee3",
+        "lightningfeeloop",
+        "charged",
+        "chargeintro",
+        "chargeoutro",
+        "heavystatic",
+        "smallwin",
+        "mediumwin",
+        "largewin",
+        "hitbetlightning",
+        "lightningwin",
+        "wincoins_small",
+        "wincoins_medium",
+        "wincoins_big",
+        "prewin",
+        "chipwin"
+      ],
+      "bufferStopNames": [
+        "timerTick",
+        "chipstack",
+        "placeChip",
+        "selectChip",
+        "clickingFail",
+        "startAutoPlay",
+        "openPopup",
+        "undo",
+        "repeatDouble",
+        "clickUIButton"
+      ],
+      "containerNames": [
+        "lightningstrikes",
+        "thunder",
+        "hitbet",
+        "musicfills",
+        "breakbeatz"
+      ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+
+
+pub const COOKIE_EVOSESSIONID: &str = "___EVOSESSIONID";

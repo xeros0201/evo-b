@@ -1,0 +1,1111 @@
+{
+  "soundConfig": {
+    "buses": [
+      {
+        "id": "master",
+        "destination": "OUTPUT"
+      },
+      {
+        "id": "effects",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "voice",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "music",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "2",
+        "volume": 1,
+        "destination": "effects"
+      },
+      {
+        "id": "1",
+        "volume": 1,
+        "destination": "music"
+      }
+    ],
+    "containers": {
+      "FeeFly": {
+        "strategy": "random-standard",
+        "avoidRepeatingLast": 1,
+        "destinationName": "2",
+        "voices": [
+          {
+            "sourceName": "ptb_goldenFeePercent1"
+          },
+          {
+            "sourceName": "ptb_goldenFeePercent2"
+          },
+          {
+            "sourceName": "ptb_goldenFeePercent3"
+          },
+          {
+            "sourceName": "ptb_goldenFeePercent4"
+          }
+        ]
+      }
+    },
+    "stealers": {
+      "LeavesGrowSecon": {
+        "minTimeBetween": 0.3
+      }
+    },
+    "buffers": {
+      "EffectOut": {
+        "sourceName": "ptb_game_result_out",
+        "destinationName": "2"
+      },
+      "TreeLeavesFly": {
+        "sourceName": "ptb_tree_leaves_fly",
+        "destinationName": "2"
+      },
+      "LeavesGrowSecon": {
+        "sourceName": "ptb_tree_grow_second",
+        "destinationName": "2",
+        "stealerName": "LeavesGrowSecon"
+      },
+      "LeavesGrowFirst": {
+        "sourceName": "ptb_tree_grow_first",
+        "destinationName": "2"
+      },
+      "Ambience": {
+        "sourceName": "ptb_ambience",
+        "destinationName": "1"
+      },
+      "BetsClosed": {
+        "sourceName": "ptb_bets_closed",
+        "destinationName": "2"
+      },
+      "BetsOpen": {
+        "sourceName": "ptb_betting_start",
+        "destinationName": "2"
+      },
+      "GameResult": {
+        "sourceName": "ptb_loose",
+        "destinationName": "2"
+      },
+      "CardMatch": {
+        "sourceName": "ptb_multy_fly",
+        "destinationName": "2"
+      },
+      "GameResultTie": {
+        "sourceName": "ptb_tie",
+        "destinationName": "2"
+      },
+      "GameResultWin": {
+        "sourceName": "ptb_win",
+        "destinationName": "2"
+      }
+    }
+  },
+  "eventConfig": [
+    {
+      "id": "timerTick",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "timerTick",
+              "gain": 0.5,
+              "initialDelay": 0.45,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chipstack",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "chipstack",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "placeChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "placeChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "selectChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "selectChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clickingFail",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "startAutoPlay",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "startAutoPlay",
+              "gain": 0.4,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openPopup",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "openPopup",
+              "gain": 0.8,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "undo",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "undo",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeat",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeatDouble",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemPress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeMinRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeMaxRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeIncreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeIncreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorCloseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorOpenRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorClosePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorOpenPress",
+      "actions": []
+    },
+    {
+      "id": "clickUIButton",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_stopall",
+      "actions": [
+        {
+          "type": "bufferStopAll",
+          "args": []
+        },
+        {
+          "type": "bufferStopAll",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_dispose",
+      "actions": [
+        {
+          "type": "dispose",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_volume_voice",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "voice",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_music",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "music",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_effects",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "effects",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_master",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "master",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_device_desktop",
+      "actions": [
+        {
+          "type": "updateMuteBehaviour",
+          "args": [
+            {
+              "muteOnInvisible": false,
+              "pauseOnInvisible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecas-ready",
+      "actions": [
+        {
+          "type": "busAddCompressor",
+          "args": [
+            {
+              "busId": "master",
+              "id": "masterlimiter",
+              "threshold": -12,
+              "knee": 25,
+              "ratio": 20,
+              "attack": 0,
+              "release": 0.15
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "Ambience",
+              "gain": 1,
+              "loop": true,
+              "fadeIn": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "actions": []
+    },
+    {
+      "id": "leavesFlyAway",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "BetsClosed",
+              "gain": 1,
+              "initialDelay": 1.1
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "EffectOut",
+              "gain": 0.8,
+              "offset": 0.2,
+              "fadeIn": 0.05
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsOpen",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "BetsOpen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leavesGrow",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "LeavesGrowFirst"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leavesGrowSecond",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "LeavesGrowSecon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treeLeavesFly",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "TreeLeavesFly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResult",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "GameResult"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betSpotLeavesGrow",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "LeavesGrowSecon",
+              "gain": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betSpotLeavesGone",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "LeavesGrowFirst",
+              "gain": 0.6,
+              "detune": -600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feeFly",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "FeeFly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardMatch",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "CardMatch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResultWinTie",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "GameResultTie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResultWin",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "GameResultWin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResultWinTieWithEffect",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "GameResultWin"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "GameResultTie"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "LeavesGrowSecon"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "EffectOut",
+              "gain": 0.8,
+              "initialDelay": 2.782
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResultWinWithEffect",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "GameResultWin"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "LeavesGrowSecon",
+              "gain": 0.8
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "EffectOut",
+              "gain": 0.8,
+              "initialDelay": 2.782
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateConfig": {
+    "genesis": {
+      "activatesOn": [],
+      "deactivatesOn": [],
+      "events": {
+        "common_volume_master": "common_volume_master",
+        "common_volume_music": "common_volume_music",
+        "common_volume_effects": "common_volume_effects",
+        "common_volume_voice": "common_volume_voice",
+        "common_stopall": "common_stopall",
+        "common_dispose": "common_dispose",
+        "clickUIButton": "clickUIButton",
+        "repeatDouble": "repeatDouble",
+        "repeat": "repeat",
+        "double": "double",
+        "undo": "undo",
+        "openPopup": "openPopup",
+        "startAutoPlay": "startAutoPlay",
+        "clickingFail": "clickingFail",
+        "selectChip": "selectChip",
+        "placeChip": "placeChip",
+        "chipstack": "chipstack",
+        "timerTick": "timerTick",
+        "BetStakeSelectorOpenPress": "BetStakeSelectorOpenPress",
+        "BetStakeSelectorClosePress": "BetStakeSelectorClosePress",
+        "BetStakeSelectorOpenRelease": "BetStakeSelectorOpenRelease",
+        "BetStakeSelectorCloseRelease": "BetStakeSelectorCloseRelease",
+        "BetStakeIncreasePress": "BetStakeIncreasePress",
+        "BetStakeIncreaseRelease": "BetStakeIncreaseRelease",
+        "BetStakeDecreasePress": "BetStakeDecreasePress",
+        "BetStakeDecreaseRelease": "BetStakeDecreaseRelease",
+        "BetStakeMaxRelease": "BetStakeMaxRelease",
+        "BetStakeMinRelease": "BetStakeMinRelease",
+        "BetStakeListItemPress": "BetStakeListItemPress",
+        "BetStakeListItemRelease": "BetStakeListItemRelease",
+        "common_device_desktop": "common_device_desktop",
+        "start": "start",
+        "leavesFlyAway": "leavesFlyAway",
+        "betsOpen": "betsOpen",
+        "leavesGrow": "leavesGrow",
+        "leavesGrowSecond": "leavesGrowSecond",
+        "treeLeavesFly": "treeLeavesFly",
+        "gameResult": "gameResult",
+        "cardMatch": "cardMatch",
+        "gameResultWinTie": "gameResultWinTie",
+        "gameResultWin": "gameResultWin",
+        "gameResultWinWithEffect": "gameResultWinWithEffect",
+        "gameResultWinTieWithEffect": "gameResultWinTieWithEffect",
+        "betSpotLeavesGrow": "betSpotLeavesGrow",
+        "betSpotLeavesGone": "betSpotLeavesGone",
+        "feeFly": "feeFly"
+      },
+      "children": {}
+    }
+  },
+  "loadrConfig": {
+    "loadPath": "/frontend/gametech/sounds/evo-baccarat-prosperity/",
+    "queue": [
+      "common_volume_master",
+      "common_volume_effects",
+      "common_volume_music",
+      "common_volume_voice",
+      "common_dispose",
+      "common_stopall",
+      "common_device_desktop"
+    ],
+    "muteOnInvisible": true,
+    "pauseOnInvisible": false
+  },
+  "atlas": {
+    "base": [
+      [
+        "ptb_loose",
+        "48kb.2ch.159648186121381",
+        172413,
+        "_"
+      ],
+      [
+        "ptb_betting_start",
+        "48kb.2ch.222951007138355",
+        135000,
+        "_"
+      ],
+      [
+        "ptb_bets_closed",
+        "48kb.2ch.167227039941686",
+        230400,
+        "_"
+      ],
+      [
+        "ptb_game_result_out",
+        "48kb.2ch.151096480579510",
+        93114,
+        "_"
+      ],
+      [
+        "ptb_tree_grow_first",
+        "48kb.2ch.224891212556815",
+        39000,
+        "_"
+      ],
+      [
+        "ptb_goldenFeePercent3",
+        "48kb.2ch.989245123443053",
+        72000,
+        "_"
+      ],
+      [
+        "ptb_goldenFeePercent2",
+        "48kb.2ch.355715109638212",
+        72000,
+        "_"
+      ],
+      [
+        "ptb_multy_fly",
+        "48kb.2ch.908474119906610",
+        240000,
+        "_"
+      ],
+      [
+        "ptb_goldenFeePercent4",
+        "48kb.2ch.639941700822637",
+        72000,
+        "_"
+      ],
+      [
+        "ptb_ambience",
+        "48kb.2ch.366384529314489",
+        15744000,
+        "_"
+      ],
+      [
+        "ptb_goldenFeePercent1",
+        "48kb.2ch.122281127943265",
+        72000,
+        "_"
+      ],
+      [
+        "ptb_tree_grow_second",
+        "48kb.2ch.445194345857033",
+        136000,
+        "_"
+      ],
+      [
+        "ptb_tree_leaves_fly",
+        "48kb.2ch.990736030446832",
+        297000,
+        "_"
+      ],
+      [
+        "ptb_win",
+        "48kb.2ch.682528270826301",
+        192000,
+        "_"
+      ],
+      [
+        "ptb_tie",
+        "48kb.2ch.115512848124326",
+        192000,
+        "_"
+      ]
+    ],
+    "common": [
+      [
+        "startAutoPlay",
+        "48kb.2ch.545640294104874",
+        76487,
+        "_"
+      ],
+      [
+        "clickingFail",
+        "48kb.2ch.893406825221300",
+        57730,
+        "_"
+      ],
+      [
+        "openPopup",
+        "48kb.2ch.894607311533275",
+        87772,
+        "_"
+      ],
+      [
+        "chipstack",
+        "48kb.1ch.681854588810040",
+        44928,
+        "_"
+      ],
+      [
+        "clickUIButton",
+        "48kb.2ch.638981453302355",
+        11520,
+        "_"
+      ],
+      [
+        "undo",
+        "48kb.1ch.860188945556397",
+        12672,
+        "_"
+      ],
+      [
+        "timerTick",
+        "48kb.2ch.872926799387045",
+        32665,
+        "_"
+      ],
+      [
+        "repeatDouble",
+        "48kb.2ch.433700755716254",
+        33653,
+        "_"
+      ],
+      [
+        "selectChip",
+        "48kb.2ch.555630258762553",
+        11285,
+        "_"
+      ],
+      [
+        "placeChip",
+        "48kb.2ch.415093273879412",
+        18775,
+        "_"
+      ]
+    ]
+  },
+  "meta": {
+    "game": "evo-baccarat-prosperity",
+    "author": "@fmartinz",
+    "version": "4.1.1",
+    "description": "",
+    "created": "2025-01-02T13:09:27.764Z",
+    "tags": [],
+    "constants": {
+      "sourceNames": [
+        "chipstack",
+        "clickingFail",
+        "clickUIButton",
+        "openPopup",
+        "placeChip",
+        "ptb_ambience",
+        "ptb_bets_closed",
+        "ptb_betting_start",
+        "ptb_game_result_out",
+        "ptb_goldenFeePercent1",
+        "ptb_goldenFeePercent2",
+        "ptb_goldenFeePercent3",
+        "ptb_goldenFeePercent4",
+        "ptb_loose",
+        "ptb_multy_fly",
+        "ptb_tie",
+        "ptb_tree_grow_first",
+        "ptb_tree_grow_second",
+        "ptb_tree_leaves_fly",
+        "ptb_win",
+        "repeatDouble",
+        "selectChip",
+        "startAutoPlay",
+        "timerTick",
+        "undo"
+      ],
+      "busNames": [
+        "master",
+        "effects",
+        "voice",
+        "music",
+        "2",
+        "1"
+      ],
+      "syncerNames": [],
+      "stealerNames": [
+        "LeavesGrowSecon"
+      ],
+      "bufferNames": [
+        "EffectOut",
+        "TreeLeavesFly",
+        "LeavesGrowSecon",
+        "LeavesGrowFirst",
+        "Ambience",
+        "BetsClosed",
+        "BetsOpen",
+        "GameResult",
+        "CardMatch",
+        "GameResultTie",
+        "GameResultWin"
+      ],
+      "bufferStopNames": [
+        "timerTick",
+        "chipstack",
+        "placeChip",
+        "selectChip",
+        "clickingFail",
+        "startAutoPlay",
+        "openPopup",
+        "undo",
+        "repeatDouble",
+        "clickUIButton"
+      ],
+      "containerNames": [
+        "FeeFly"
+      ]
+    }
+  }
+}

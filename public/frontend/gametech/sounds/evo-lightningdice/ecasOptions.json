@@ -1,0 +1,1125 @@
+{
+  "soundConfig": {
+    "buses": [
+      {
+        "id": "master",
+        "destination": "OUTPUT"
+      },
+      {
+        "id": "effects",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "voice",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "music",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "DelayedEffects",
+        "destination": "effects",
+        "inserts": [
+          {
+            "insertType": "PingPongDelayInsert",
+            "id": "pingpong",
+            "delayTimeLeft": 0.563,
+            "delayTimeRight": 0.75,
+            "dryGain": 1,
+            "wetGain": 0.2,
+            "feedback": 0.3,
+            "maxDelayTime": 0.75
+          }
+        ]
+      }
+    ],
+    "buffers": {
+      "chipWin": {
+        "destinationName": "effects",
+        "sourceName": "chipWin",
+        "gain": 0.18
+      },
+      "betOnAll": {
+        "destinationName": "effects",
+        "sourceName": "betOnAll",
+        "gain": 0.18,
+        "detune": [
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "betsClosingSoon": {
+        "destinationName": "DelayedEffects",
+        "sourceName": "betsClosingSoon",
+        "gain": 0.14,
+        "fadeIn": 1
+      },
+      "lightningCharging": {
+        "destinationName": "effects",
+        "sourceName": "lightningCharging",
+        "gain": 0.4,
+        "fadeOut": 1
+      },
+      "lightningMultiplierCountEnd": {
+        "destinationName": "effects",
+        "sourceName": "lightningMultiplierCountEnd",
+        "stealerName": "lightningMultiplierCountEnd",
+        "gain": 0.18
+      },
+      "lightningMultiplierLoop": {
+        "destinationName": "effects",
+        "sourceName": "lightningMultiplierLoop",
+        "stealerName": "lightningMultiplierLoop",
+        "gain": 0.18,
+        "loop": true
+      },
+      "lightningStraightBet": {
+        "destinationName": "effects",
+        "sourceName": "lightningStraightBet",
+        "gain": 0.28
+      },
+      "lightningStrike": {
+        "destinationName": "effects",
+        "sourceName": "lightningStrike",
+        "gain": 0.7,
+        "detune": [
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "lightningStrikeHigh": {
+        "destinationName": "effects",
+        "sourceName": "lightningStrikeHigh",
+        "gain": 0.7,
+        "detune": [
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "lightningWin": {
+        "destinationName": "effects",
+        "sourceName": "lightningWin",
+        "gain": 0.2
+      },
+      "bigWin": {
+        "destinationName": "effects",
+        "sourceName": "bigWin",
+        "gain": 0.2
+      },
+      "mediumWin": {
+        "destinationName": "effects",
+        "sourceName": "mediumWin",
+        "gain": 0.2
+      },
+      "smallWin": {
+        "destinationName": "effects",
+        "sourceName": "smallWin",
+        "gain": 0.2
+      },
+      "winRollUp": {
+        "destinationName": "effects",
+        "sourceName": "winRollUp",
+        "gain": 0.2,
+        "loop": true
+      },
+      "winRollUpEnd": {
+        "destinationName": "effects",
+        "sourceName": "winRollUpEnd",
+        "gain": 0.2
+      }
+    },
+    "containers": {},
+    "syncers": {},
+    "stealers": {
+      "lightningMultiplierLoop": {
+        "maxVoices": 1,
+        "strategy": "kill-newest"
+      },
+      "lightningMultiplierCountEnd": {
+        "minTimeBetween": 0.1
+      }
+    }
+  },
+  "eventConfig": [
+    {
+      "id": "timerTick",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "timerTick",
+              "gain": 0.5,
+              "initialDelay": 0.45,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chipstack",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "chipstack",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "placeChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "placeChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "selectChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "selectChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clickingFail",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "startAutoPlay",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "startAutoPlay",
+              "gain": 0.4,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openPopup",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "openPopup",
+              "gain": 0.8,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "undo",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "undo",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeat",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeatDouble",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemPress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeMinRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeMaxRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeIncreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeIncreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorCloseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorOpenRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorClosePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorOpenPress",
+      "actions": []
+    },
+    {
+      "id": "clickUIButton",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_stopall",
+      "actions": [
+        {
+          "type": "bufferStopAll",
+          "args": []
+        },
+        {
+          "type": "bufferStopAll",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_dispose",
+      "actions": [
+        {
+          "type": "dispose",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_volume_voice",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "voice",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_music",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "music",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_effects",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "effects",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_master",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "master",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_device_desktop",
+      "actions": [
+        {
+          "type": "updateMuteBehaviour",
+          "args": [
+            {
+              "muteOnInvisible": false,
+              "pauseOnInvisible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecas-ready",
+      "actions": []
+    },
+    {
+      "id": "chipwin",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "chipWin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betOnAll",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "betOnAll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsClosingSoon",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "betsClosingSoon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningCharging",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningCharging"
+            }
+          ]
+        },
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "betsClosingSoon",
+              "fadeOut": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LightningMultiplierCountEnd",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningMultiplierCountEnd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "StopLightningMultiplierLoop",
+      "actions": [
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "lightningMultiplierLoop",
+              "fadeOut": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LightningMultiplierLoop",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningMultiplierLoop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningStraightBet",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningStraightBet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningStrike",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningStrike"
+            }
+          ]
+        },
+        {
+          "type": "bufferApplyEnvelopeByName",
+          "args": [
+            {
+              "name": "lightningCharging",
+              "envelopes": {
+                "gain": {
+                  "points": [
+                    {
+                      "pos": 1000,
+                      "val": 0.2
+                    }
+                  ],
+                  "curve": "s-curve"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningStrikeHigh",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningStrikeHigh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightningWin",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "lightningWin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bigWin",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "bigWin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mediumWin",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "mediumWin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smallWin",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "smallWin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winRollUp",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "winRollUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winRollUpEnd",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "winRollUpEnd"
+            }
+          ]
+        },
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "winRollUp",
+              "fadeOut": 0.2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateConfig": {
+    "genesis": {
+      "activatesOn": [],
+      "deactivatesOn": [],
+      "events": {
+        "common_volume_master": "common_volume_master",
+        "common_volume_music": "common_volume_music",
+        "common_volume_effects": "common_volume_effects",
+        "common_volume_voice": "common_volume_voice",
+        "common_stopall": "common_stopall",
+        "common_dispose": "common_dispose",
+        "clickUIButton": "clickUIButton",
+        "repeatDouble": "repeatDouble",
+        "repeat": "repeat",
+        "double": "double",
+        "undo": "undo",
+        "openPopup": "openPopup",
+        "startAutoPlay": "startAutoPlay",
+        "clickingFail": "clickingFail",
+        "selectChip": "selectChip",
+        "placeChip": "placeChip",
+        "chipstack": "chipstack",
+        "timerTick": "timerTick",
+        "BetStakeSelectorOpenPress": "BetStakeSelectorOpenPress",
+        "BetStakeSelectorClosePress": "BetStakeSelectorClosePress",
+        "BetStakeSelectorOpenRelease": "BetStakeSelectorOpenRelease",
+        "BetStakeSelectorCloseRelease": "BetStakeSelectorCloseRelease",
+        "BetStakeIncreasePress": "BetStakeIncreasePress",
+        "BetStakeIncreaseRelease": "BetStakeIncreaseRelease",
+        "BetStakeDecreasePress": "BetStakeDecreasePress",
+        "BetStakeDecreaseRelease": "BetStakeDecreaseRelease",
+        "BetStakeMaxRelease": "BetStakeMaxRelease",
+        "BetStakeMinRelease": "BetStakeMinRelease",
+        "BetStakeListItemPress": "BetStakeListItemPress",
+        "BetStakeListItemRelease": "BetStakeListItemRelease",
+        "common_device_desktop": "common_device_desktop",
+        "chipwin": "chipwin",
+        "betOnAll": "betOnAll",
+        "betsClosingSoon": "betsClosingSoon",
+        "lightningCharging": "lightningCharging",
+        "LightningMultiplierCountEnd": "LightningMultiplierCountEnd",
+        "StopLightningMultiplierLoop": "StopLightningMultiplierLoop",
+        "LightningMultiplierLoop": "LightningMultiplierLoop",
+        "lightningStraightBet": "lightningStraightBet",
+        "lightningStrike": "lightningStrike",
+        "lightningStrikeHigh": "lightningStrikeHigh",
+        "lightningWin": "lightningWin",
+        "bigWin": "bigWin",
+        "mediumWin": "mediumWin",
+        "smallWin": "smallWin",
+        "winRollUp": "winRollUp",
+        "winRollUpEnd": "winRollUpEnd"
+      },
+      "children": {}
+    }
+  },
+  "loadrConfig": {
+    "loadPath": "/frontend/gametech/sounds/evo-lightningdice/",
+    "queue": true,
+    "muteOnInvisible": true,
+    "pauseOnInvisible": false,
+    "preload": []
+  },
+  "atlas": {
+    "base": [
+      [
+        "winRollUpEnd",
+        "48kb.2ch.145975167471504",
+        91520,
+        "_"
+      ],
+      [
+        "lightningMultiplierLoop",
+        "48kb.2ch.107265572631585",
+        57679,
+        "_"
+      ],
+      [
+        "lightningStrikeHigh",
+        "48kb.2ch.828974807033432",
+        83871,
+        "_"
+      ],
+      [
+        "smallWin",
+        "48kb.2ch.136293473253367",
+        108949,
+        "_"
+      ],
+      [
+        "lightningWin",
+        "48kb.2ch.810523086961143",
+        151023,
+        "_"
+      ],
+      [
+        "betsClosingSoon",
+        "48kb.2ch.119787673112733",
+        385024,
+        "_"
+      ],
+      [
+        "betOnAll",
+        "48kb.2ch.187780886832539",
+        38913,
+        "_"
+      ],
+      [
+        "bigWin",
+        "48kb.2ch.875008833735297",
+        172757,
+        "_"
+      ],
+      [
+        "lightningStraightBet",
+        "48kb.2ch.351342966037636",
+        38801,
+        "_"
+      ],
+      [
+        "lightningStrike",
+        "48kb.2ch.496753830171983",
+        57958,
+        "_"
+      ],
+      [
+        "chipWin",
+        "48kb.1ch.184277571948568",
+        26496,
+        "_"
+      ],
+      [
+        "lightningCharging",
+        "48kb.2ch.156435271911593",
+        170528,
+        "_"
+      ],
+      [
+        "mediumWin",
+        "48kb.2ch.145584917155480",
+        144893,
+        "_"
+      ],
+      [
+        "lightningMultiplierCountEnd",
+        "48kb.2ch.886463030113453",
+        86518,
+        "_"
+      ],
+      [
+        "winRollUp",
+        "48kb.2ch.750434385865505",
+        85334,
+        "_"
+      ]
+    ],
+    "common": [
+      [
+        "startAutoPlay",
+        "48kb.2ch.545640294104874",
+        76487,
+        "_"
+      ],
+      [
+        "clickingFail",
+        "48kb.2ch.893406825221300",
+        57730,
+        "_"
+      ],
+      [
+        "openPopup",
+        "48kb.2ch.894607311533275",
+        87772,
+        "_"
+      ],
+      [
+        "chipstack",
+        "48kb.1ch.681854588810040",
+        44928,
+        "_"
+      ],
+      [
+        "clickUIButton",
+        "48kb.2ch.638981453302355",
+        11520,
+        "_"
+      ],
+      [
+        "undo",
+        "48kb.1ch.860188945556397",
+        12672,
+        "_"
+      ],
+      [
+        "timerTick",
+        "48kb.2ch.872926799387045",
+        32665,
+        "_"
+      ],
+      [
+        "repeatDouble",
+        "48kb.2ch.433700755716254",
+        33653,
+        "_"
+      ],
+      [
+        "selectChip",
+        "48kb.2ch.555630258762553",
+        11285,
+        "_"
+      ],
+      [
+        "placeChip",
+        "48kb.2ch.415093273879412",
+        18775,
+        "_"
+      ]
+    ]
+  },
+  "meta": {
+    "game": "evo-lightningdice",
+    "author": "@epodiachev",
+    "version": "4.1.1",
+    "description": "",
+    "created": "2025-01-02T13:09:27.922Z",
+    "tags": [],
+    "constants": {
+      "sourceNames": [
+        "betOnAll",
+        "betsClosingSoon",
+        "bigWin",
+        "chipstack",
+        "chipWin",
+        "clickingFail",
+        "clickUIButton",
+        "lightningCharging",
+        "lightningMultiplierCountEnd",
+        "lightningMultiplierLoop",
+        "lightningStraightBet",
+        "lightningStrike",
+        "lightningStrikeHigh",
+        "lightningWin",
+        "mediumWin",
+        "openPopup",
+        "placeChip",
+        "repeatDouble",
+        "selectChip",
+        "smallWin",
+        "startAutoPlay",
+        "timerTick",
+        "undo",
+        "winRollUp",
+        "winRollUpEnd"
+      ],
+      "busNames": [
+        "master",
+        "effects",
+        "voice",
+        "music",
+        "DelayedEffects"
+      ],
+      "syncerNames": [],
+      "stealerNames": [
+        "lightningMultiplierLoop",
+        "lightningMultiplierCountEnd"
+      ],
+      "bufferNames": [
+        "chipWin",
+        "betOnAll",
+        "betsClosingSoon",
+        "lightningCharging",
+        "lightningMultiplierCountEnd",
+        "lightningMultiplierLoop",
+        "lightningStraightBet",
+        "lightningStrike",
+        "lightningStrikeHigh",
+        "lightningWin",
+        "bigWin",
+        "mediumWin",
+        "smallWin",
+        "winRollUp",
+        "winRollUpEnd"
+      ],
+      "bufferStopNames": [
+        "timerTick",
+        "chipstack",
+        "placeChip",
+        "selectChip",
+        "clickingFail",
+        "startAutoPlay",
+        "openPopup",
+        "undo",
+        "repeatDouble",
+        "clickUIButton"
+      ],
+      "containerNames": []
+    }
+  }
+}

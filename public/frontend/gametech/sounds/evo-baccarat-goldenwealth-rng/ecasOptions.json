@@ -1,0 +1,5119 @@
+{
+  "soundConfig": {
+    "buses": [
+      {
+        "id": "effects",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "voice",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "music",
+        "volume": 1,
+        "destination": "master"
+      },
+      {
+        "id": "master",
+        "destination": "OUTPUT"
+      }
+    ],
+    "syncers": {},
+    "stealers": {
+      "winCounterLoop": {
+        "maxVoices": 1,
+        "strategy": "kill-oldest",
+        "fadeOut": 1
+      }
+    },
+    "containers": {
+      "cards_riffle": {
+        "destinationName": "effects",
+        "strategy": "random-shuffle",
+        "voices": [
+          {
+            "sourceName": "cards_riffle",
+            "offset": 0,
+            "duration": 0.667
+          },
+          {
+            "sourceName": "cards_riffle",
+            "offset": 0.7,
+            "duration": 0.65
+          },
+          {
+            "sourceName": "cards_riffle",
+            "offset": 1.37,
+            "duration": 0.668
+          },
+          {
+            "sourceName": "cards_riffle",
+            "offset": 2.06,
+            "duration": 0.67
+          }
+        ]
+      },
+      "cards_deckDropOnDeck": {
+        "destinationName": "effects",
+        "strategy": "random-standard",
+        "voices": [
+          {
+            "sourceName": "cards_deckDropOnDeck",
+            "offset": 0,
+            "duration": 0.146
+          },
+          {
+            "sourceName": "cards_deckDropOnDeck",
+            "offset": 0.16
+          }
+        ]
+      },
+      "cards_moveDeck": {
+        "destinationName": "effects",
+        "strategy": "random-standard",
+        "voices": [
+          {
+            "sourceName": "cards_moveDeck",
+            "offset": 0,
+            "duration": 0.5
+          },
+          {
+            "sourceName": "cards_moveDeck",
+            "offset": 0.52,
+            "duration": 0.5
+          },
+          {
+            "sourceName": "cards_moveDeck",
+            "offset": 1.04,
+            "duration": 0.5
+          },
+          {
+            "sourceName": "cards_moveDeck",
+            "offset": 1.56
+          }
+        ]
+      },
+      "cards_moveDeckShort": {
+        "destinationName": "effects",
+        "strategy": "random-standard",
+        "voices": [
+          {
+            "sourceName": "cards_moveDeckShort",
+            "offset": 0,
+            "duration": 0.3
+          },
+          {
+            "sourceName": "cards_moveDeckShort",
+            "offset": 0.32,
+            "duration": 0.3
+          },
+          {
+            "sourceName": "cards_moveDeckShort",
+            "offset": 0.64,
+            "duration": 0.3
+          },
+          {
+            "sourceName": "cards_moveDeckShort",
+            "offset": 0.96
+          }
+        ]
+      },
+      "feePercent": {
+        "destinationName": "effects",
+        "strategy": "random-standard",
+        "detune": [
+          [
+            -75,
+            75
+          ]
+        ],
+        "voices": [
+          {
+            "sourceName": "feePercent1"
+          },
+          {
+            "sourceName": "feePercent2"
+          },
+          {
+            "sourceName": "feePercent3"
+          },
+          {
+            "sourceName": "feePercent4"
+          }
+        ]
+      },
+      "particlesFlyFromCard": {
+        "destinationName": "effects",
+        "strategy": "random-standard",
+        "voices": [
+          {
+            "sourceName": "particlesFlyFromCard1"
+          },
+          {
+            "sourceName": "particlesFlyFromCard2"
+          },
+          {
+            "sourceName": "particlesFlyFromCard3"
+          },
+          {
+            "sourceName": "particlesFlyFromCard4"
+          }
+        ]
+      }
+    },
+    "buffers": {
+      "awayWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "awayWins"
+      },
+      "bankerWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "bankerWins"
+      },
+      "dragonWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "dragonWins"
+      },
+      "drawWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "drawWins"
+      },
+      "homeWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "homeWins"
+      },
+      "placebets": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "placebets"
+      },
+      "playerWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "playerWins"
+      },
+      "suitedTieWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "suitedTieWins"
+      },
+      "tieWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "tieWins"
+      },
+      "tigerWins": {
+        "gain": 0.31622776601683794,
+        "highpass": 120,
+        "destinationName": "voice",
+        "sourceName": "tigerWins"
+      },
+      "goldenshimmer": {
+        "destinationName": "music",
+        "sourceName": "goldenshimmer",
+        "loop": true,
+        "offset": [
+          [
+            0,
+            60
+          ]
+        ],
+        "envelopes": {
+          "gain": {
+            "curve": "s-curve",
+            "points": [
+              {
+                "pos": 0,
+                "val": 0
+              },
+              {
+                "pos": 4000,
+                "val": 0.31622776601683794
+              }
+            ]
+          }
+        }
+      },
+      "cards_cardFlip": {
+        "destinationName": "effects",
+        "sourceName": "cards_cardFlip"
+      },
+      "cards_cardsInHolder": {
+        "destinationName": "effects",
+        "sourceName": "cards_cardsInHolder"
+      },
+      "cards_cutCardInDeck": {
+        "destinationName": "effects",
+        "sourceName": "cards_cutCardInDeck"
+      },
+      "cards_cutCardOutOfDeck": {
+        "destinationName": "effects",
+        "sourceName": "cards_cutCardOutOfDeck"
+      },
+      "cards_deckDropOnCloth": {
+        "destinationName": "effects",
+        "sourceName": "cards_deckDropOnCloth"
+      },
+      "cards_deckDropOnDeck": {
+        "destinationName": "effects",
+        "sourceName": "cards_deckDropOnDeck"
+      },
+      "cards_deckInShoe": {
+        "destinationName": "effects",
+        "sourceName": "cards_deckInShoe"
+      },
+      "cards_deckOutOfShoe": {
+        "destinationName": "effects",
+        "sourceName": "cards_deckOutOfShoe"
+      },
+      "cards_moveDeck": {
+        "destinationName": "effects",
+        "sourceName": "cards_moveDeck"
+      },
+      "cards_moveDeckShort": {
+        "destinationName": "effects",
+        "sourceName": "cards_moveDeckShort"
+      },
+      "cards_shoeSlider": {
+        "destinationName": "effects",
+        "sourceName": "cards_shoeSlider"
+      },
+      "cards_slideCardFromShoe": {
+        "destinationName": "effects",
+        "sourceName": "cards_slideCardFromShoe"
+      },
+      "tap": {
+        "destinationName": "effects",
+        "sourceName": "tap"
+      },
+      "betsClosing": {
+        "destinationName": "effects",
+        "sourceName": "betsClosing"
+      },
+      "cardsFly": {
+        "destinationName": "effects",
+        "sourceName": "cardsFly"
+      },
+      "coinsFly": {
+        "destinationName": "effects",
+        "sourceName": "coinsFly"
+      },
+      "particlesFlyFromFee": {
+        "destinationName": "effects",
+        "sourceName": "particlesFlyFromFee"
+      },
+      "goldenOpenPot": {
+        "destinationName": "effects",
+        "sourceName": "goldenOpenPot"
+      },
+      "WinCountupLoop": {
+        "destinationName": "effects",
+        "sourceName": "winCounterLoop",
+        "maxWaitTime": 1,
+        "stealerName": "winCounterLoop",
+        "loop": true,
+        "detune": 100,
+        "fadeIn": 0.05,
+        "gain": 0.4
+      },
+      "WinCountupLoopEnd": {
+        "destinationName": "effects",
+        "sourceName": "winCounterEnd",
+        "maxWaitTime": 1,
+        "loop": false,
+        "detune": 100,
+        "gain": 0.4
+      }
+    }
+  },
+  "eventConfig": [
+    {
+      "id": "timerTick",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "timerTick",
+              "gain": 0.5,
+              "initialDelay": 0.45,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chipstack",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "chipstack",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "placeChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "placeChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "selectChip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "selectChip",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clickingFail",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "startAutoPlay",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "startAutoPlay",
+              "gain": 0.4,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openPopup",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "openPopup",
+              "gain": 0.8,
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "undo",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "undo",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeat",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeatDouble",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "repeatDouble",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeListItemPress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeMinRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeMaxRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickingFail",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeDecreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeIncreaseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeIncreasePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorCloseRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorOpenRelease",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BetStakeSelectorClosePress",
+      "actions": []
+    },
+    {
+      "id": "BetStakeSelectorOpenPress",
+      "actions": []
+    },
+    {
+      "id": "clickUIButton",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "sourceName": "clickUIButton",
+              "destinationName": "effects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_stopall",
+      "actions": [
+        {
+          "type": "bufferStopAll",
+          "args": []
+        },
+        {
+          "type": "bufferStopAll",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_dispose",
+      "actions": [
+        {
+          "type": "dispose",
+          "args": []
+        }
+      ]
+    },
+    {
+      "id": "common_volume_voice",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "voice",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_music",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "music",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_effects",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "effects",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common_volume_master",
+      "actions": [
+        {
+          "type": "busSetGain",
+          "args": [
+            {
+              "busId": "master",
+              "gain": {
+                "param": 0,
+                "min": {
+                  "in": 0,
+                  "out": 0
+                },
+                "max": {
+                  "in": 1,
+                  "out": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_al",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "al"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ar",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_bg",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "bg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_bp",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "bp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ca",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_cn",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "cn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_cs",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "cs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_de",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "de"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_dk",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "dk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_el",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "el"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_en",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "en"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_es",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "es"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_et",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "et"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_fi",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_fl",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "fl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_fr",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "fr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_he",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "he"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_hi",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "hi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_hr",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "hr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_hu",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "hu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_hy",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "hy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_id",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_it",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ja",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ja"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ka",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ka"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ko",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ko"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_lt",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "lt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_lv",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "lv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_mn",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "mn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ms",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_nl",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "nl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_no",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_pl",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "pl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_pt",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "pt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ro",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ru",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ru"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_sk",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "sk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_sl",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "sl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_sr",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "sr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_sv",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "sv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_th",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "th"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_tr",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "tr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_ua",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "ua"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "language_vi",
+      "actions": [
+        {
+          "type": "setLanguage",
+          "args": [
+            {
+              "language": "vi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "awayWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "awayWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bankerWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "bankerWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dragonWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "dragonWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drawWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "drawWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "homeWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "homeWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsOpen",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "placebets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "playerWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "playerWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suitedTieWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "suitedTieWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tieWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "tieWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tigerWins",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "tigerWins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardFlip",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_cardFlip",
+              "gain": 1,
+              "detune": [
+                [
+                  -75,
+                  75
+                ]
+              ],
+              "highpass": [
+                [
+                  20,
+                  300
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardsInHolder",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_cardsInHolder",
+              "gain": 1.2,
+              "detune": [
+                [
+                  -50,
+                  50
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slideCardFromShoe",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_slideCardFromShoe",
+              "gain": 1,
+              "detune": [
+                [
+                  -50,
+                  50
+                ]
+              ],
+              "offset": [
+                [
+                  0,
+                  0.01
+                ]
+              ],
+              "fadeIn": 0.005
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deckDropOnCloth",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_deckDropOnCloth",
+              "gain": 1,
+              "detune": [
+                [
+                  -50,
+                  50
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deckDropOnDeck",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "cards_deckDropOnDeck",
+              "gain": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "riffle",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "cards_riffle",
+              "gain": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cutCardOutOfDeck",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_cutCardOutOfDeck",
+              "gain": 1,
+              "detune": [
+                [
+                  -50,
+                  50
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cutCardInDeck",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_cutCardInDeck",
+              "gain": 1,
+              "detune": [
+                [
+                  -50,
+                  50
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shoeSliderSlideOut",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_shoeSlider",
+              "duration": 0.152,
+              "gain": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shoeSliderSlideInEmptyShoe",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_shoeSlider",
+              "offset": 0.17,
+              "duration": 0.276,
+              "gain": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shoeSliderSlideInDeckInShoe",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_shoeSlider",
+              "offset": 0.46,
+              "gain": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deckOutOfShoe",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_deckOutOfShoe",
+              "gain": 1,
+              "detune": [
+                [
+                  -50,
+                  50
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deckInShoe",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cards_deckInShoe",
+              "gain": 1,
+              "detune": [
+                [
+                  -10,
+                  10
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moveDeck",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "cards_moveDeck",
+              "gain": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moveDeckShort",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "cards_moveDeckShort",
+              "gain": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dealNow",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "tap",
+              "gain": 0.6309573444801932
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecas-ready",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "goldenshimmer"
+            }
+          ]
+        },
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "betsClosing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openBowl",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "goldenOpenPot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multipliersAppear",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "cardsFly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResultWinWithEffect",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "coinsFly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gameResultWinTieWithEffect",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "coinsFly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feeFly",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "feePercent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "particlesFly",
+      "actions": [
+        {
+          "type": "containerPlay",
+          "args": [
+            {
+              "name": "particlesFlyFromCard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "particlesFlyFromFee",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "particlesFlyFromFee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winCounterLoopStart",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "WinCountupLoop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winCounterLoopEnd",
+      "actions": [
+        {
+          "type": "bufferPlay",
+          "args": [
+            {
+              "name": "WinCountupLoopEnd"
+            }
+          ]
+        },
+        {
+          "type": "bufferStopByName",
+          "args": [
+            {
+              "name": "WinCountupLoop",
+              "fadeOut": 0.3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateConfig": {
+    "genesis": {
+      "activatesOn": [],
+      "deactivatesOn": [],
+      "events": {
+        "common_volume_master": "common_volume_master",
+        "common_volume_music": "common_volume_music",
+        "common_volume_effects": "common_volume_effects",
+        "common_volume_voice": "common_volume_voice",
+        "common_stopall": "common_stopall",
+        "common_dispose": "common_dispose",
+        "clickUIButton": "clickUIButton",
+        "repeatDouble": "repeatDouble",
+        "repeat": "repeat",
+        "double": "double",
+        "undo": "undo",
+        "openPopup": "openPopup",
+        "startAutoPlay": "startAutoPlay",
+        "clickingFail": "clickingFail",
+        "selectChip": "selectChip",
+        "placeChip": "placeChip",
+        "chipstack": "chipstack",
+        "timerTick": "timerTick",
+        "BetStakeSelectorOpenPress": "BetStakeSelectorOpenPress",
+        "BetStakeSelectorClosePress": "BetStakeSelectorClosePress",
+        "BetStakeSelectorOpenRelease": "BetStakeSelectorOpenRelease",
+        "BetStakeSelectorCloseRelease": "BetStakeSelectorCloseRelease",
+        "BetStakeIncreasePress": "BetStakeIncreasePress",
+        "BetStakeIncreaseRelease": "BetStakeIncreaseRelease",
+        "BetStakeDecreasePress": "BetStakeDecreasePress",
+        "BetStakeDecreaseRelease": "BetStakeDecreaseRelease",
+        "BetStakeMaxRelease": "BetStakeMaxRelease",
+        "BetStakeMinRelease": "BetStakeMinRelease",
+        "BetStakeListItemPress": "BetStakeListItemPress",
+        "BetStakeListItemRelease": "BetStakeListItemRelease",
+        "language_al": "language_al",
+        "language_ar": "language_ar",
+        "language_bg": "language_bg",
+        "language_bp": "language_bp",
+        "language_ca": "language_ca",
+        "language_cn": "language_cn",
+        "language_cs": "language_cs",
+        "language_de": "language_de",
+        "language_dk": "language_dk",
+        "language_el": "language_el",
+        "language_en": "language_en",
+        "language_es": "language_es",
+        "language_et": "language_et",
+        "language_fi": "language_fi",
+        "language_fl": "language_fl",
+        "language_fr": "language_fr",
+        "language_he": "language_he",
+        "language_hi": "language_hi",
+        "language_hr": "language_hr",
+        "language_hu": "language_hu",
+        "language_hy": "language_hy",
+        "language_id": "language_id",
+        "language_it": "language_it",
+        "language_ja": "language_ja",
+        "language_ka": "language_ka",
+        "language_ko": "language_ko",
+        "language_lt": "language_lt",
+        "language_lv": "language_lv",
+        "language_mn": "language_mn",
+        "language_ms": "language_ms",
+        "language_nl": "language_nl",
+        "language_no": "language_no",
+        "language_pl": "language_pl",
+        "language_pt": "language_pt",
+        "language_ro": "language_ro",
+        "language_ru": "language_ru",
+        "language_sk": "language_sk",
+        "language_sl": "language_sl",
+        "language_sr": "language_sr",
+        "language_sv": "language_sv",
+        "language_th": "language_th",
+        "language_tr": "language_tr",
+        "language_ua": "language_ua",
+        "language_vi": "language_vi",
+        "awayWins": "awayWins",
+        "dragonWins": "dragonWins",
+        "drawWins": "drawWins",
+        "homeWins": "homeWins",
+        "betsOpen": "betsOpen",
+        "suitedTieWins": "suitedTieWins",
+        "tigerWins": "tigerWins",
+        "cardFlip": "cardFlip",
+        "cardsInHolder": "cardsInHolder",
+        "slideCardFromShoe": "slideCardFromShoe",
+        "deckDropOnCloth": "deckDropOnCloth",
+        "deckDropOnDeck": "deckDropOnDeck",
+        "riffle": "riffle",
+        "cutCardOutOfDeck": "cutCardOutOfDeck",
+        "cutCardInDeck": "cutCardInDeck",
+        "deckOutOfShoe": "deckOutOfShoe",
+        "deckInShoe": "deckInShoe",
+        "moveDeck": "moveDeck",
+        "moveDeckShort": "moveDeckShort",
+        "dealNow": "dealNow",
+        "openBowl": "openBowl",
+        "multipliersAppear": "multipliersAppear",
+        "gameResultWinWithEffect": "gameResultWinWithEffect",
+        "gameResultWinTieWithEffect": "gameResultWinTieWithEffect",
+        "feeFly": "feeFly",
+        "particlesFly": "particlesFly",
+        "particlesFlyFromFee": "particlesFlyFromFee",
+        "winCounterLoopStart": "winCounterLoopStart",
+        "winCounterLoopEnd": "winCounterLoopEnd",
+        "gameResult": {
+          "0": "playerWins",
+          "1": "bankerWins",
+          "2": "tieWins"
+        },
+        "shoeSlider": {
+          "0": "shoeSliderSlideOut",
+          "1": "shoeSliderSlideInEmptyShoe",
+          "2": "shoeSliderSlideInDeckInShoe"
+        }
+      },
+      "children": {}
+    }
+  },
+  "loadrConfig": {
+    "loadPath": "/frontend/gametech/sounds/evo-baccarat-goldenwealth-rng/",
+    "queue": true,
+    "muteOnInvisible": true,
+    "pauseOnInvisible": true
+  },
+  "atlas": {
+    "base": [
+      [
+        "feePercent3",
+        "48kb.2ch.212299835536764",
+        71937,
+        "_"
+      ],
+      [
+        "betsClosing",
+        "48kb.2ch.752482242336990",
+        301990,
+        "_"
+      ],
+      [
+        "winCounterEnd",
+        "48kb.2ch.535592907837773",
+        72000,
+        "_"
+      ],
+      [
+        "cardsFly",
+        "48kb.2ch.122993974407184",
+        222000,
+        "_"
+      ],
+      [
+        "coinsFly",
+        "48kb.2ch.104676061615770",
+        215000,
+        "_"
+      ],
+      [
+        "particlesFlyFromFee",
+        "48kb.2ch.118876747766654",
+        203000,
+        "_"
+      ],
+      [
+        "feePercent4",
+        "48kb.2ch.178748503002241",
+        68475,
+        "_"
+      ],
+      [
+        "particlesFlyFromCard1",
+        "48kb.2ch.231587424969781",
+        198621,
+        "_"
+      ],
+      [
+        "goldenOpenPot",
+        "48kb.2ch.322401701836477",
+        42624,
+        "_"
+      ],
+      [
+        "goldenshimmer",
+        "48kb.2ch.306457185959946",
+        3036003,
+        "_"
+      ],
+      [
+        "particlesFlyFromCard3",
+        "48kb.2ch.127234870074790",
+        210000,
+        "_"
+      ],
+      [
+        "particlesFlyFromCard4",
+        "48kb.2ch.181090186901749",
+        222001,
+        "_"
+      ],
+      [
+        "feePercent1",
+        "48kb.2ch.116248502639776",
+        68371,
+        "_"
+      ],
+      [
+        "feePercent2",
+        "48kb.2ch.175991459895611",
+        72586,
+        "_"
+      ],
+      [
+        "particlesFlyFromCard2",
+        "48kb.2ch.128994139858644",
+        210001,
+        "_"
+      ],
+      [
+        "winCounterLoop",
+        "48kb.2ch.400119642971686",
+        72000,
+        "_"
+      ]
+    ],
+    "common": [
+      [
+        "startAutoPlay",
+        "48kb.2ch.545640294104874",
+        76487,
+        "_"
+      ],
+      [
+        "clickingFail",
+        "48kb.2ch.893406825221300",
+        57730,
+        "_"
+      ],
+      [
+        "openPopup",
+        "48kb.2ch.894607311533275",
+        87772,
+        "_"
+      ],
+      [
+        "chipstack",
+        "48kb.1ch.681854588810040",
+        44928,
+        "_"
+      ],
+      [
+        "clickUIButton",
+        "48kb.2ch.638981453302355",
+        11520,
+        "_"
+      ],
+      [
+        "undo",
+        "48kb.1ch.860188945556397",
+        12672,
+        "_"
+      ],
+      [
+        "timerTick",
+        "48kb.2ch.872926799387045",
+        32665,
+        "_"
+      ],
+      [
+        "repeatDouble",
+        "48kb.2ch.433700755716254",
+        33653,
+        "_"
+      ],
+      [
+        "selectChip",
+        "48kb.2ch.555630258762553",
+        11285,
+        "_"
+      ],
+      [
+        "placeChip",
+        "48kb.2ch.415093273879412",
+        18775,
+        "_"
+      ]
+    ],
+    "evo-baccarat-rng": [
+      [
+        "awayWins",
+        "48kb.2ch.101221566437391",
+        109088,
+        "ms"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.149349511690184",
+        80249,
+        "ms"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.134913780058652",
+        94041,
+        "ms"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.170598952941937",
+        100311,
+        "ms"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.281213066975003",
+        105326,
+        "ms"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.104904153329222",
+        51409,
+        "ms"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.628887284493149",
+        85264,
+        "ms"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.306278990902617",
+        102818,
+        "ms"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.700556277239551",
+        117865,
+        "ms"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.391320053196753",
+        114103,
+        "ms"
+      ],
+      [
+        "tap",
+        "48kb.2ch.129436843020320",
+        2507,
+        "_"
+      ],
+      [
+        "cards_moveDeckShort",
+        "48kb.1ch.432707023385970",
+        60531,
+        "_"
+      ],
+      [
+        "cards_slideCardFromShoe",
+        "48kb.1ch.130202658977472",
+        6400,
+        "_"
+      ],
+      [
+        "cards_riffle",
+        "48kb.1ch.175832324963171",
+        131032,
+        "_"
+      ],
+      [
+        "cards_cutCardOutOfDeck",
+        "48kb.1ch.172724930671718",
+        8724,
+        "_"
+      ],
+      [
+        "cards_cardsInHolder",
+        "48kb.1ch.580082890223749",
+        6782,
+        "_"
+      ],
+      [
+        "cards_cardFlip",
+        "48kb.1ch.282928226864204",
+        20048,
+        "_"
+      ],
+      [
+        "cards_moveDeck",
+        "48kb.1ch.145912710978233",
+        98854,
+        "_"
+      ],
+      [
+        "fpBaccaratMusic_loop_stereo",
+        "48kb.2ch.133008525189662",
+        8643794,
+        "_"
+      ],
+      [
+        "cards_deckOutOfShoe",
+        "48kb.1ch.137160486894561",
+        15051,
+        "_"
+      ],
+      [
+        "cards_deckDropOnDeck",
+        "48kb.1ch.787262404158350",
+        12679,
+        "_"
+      ],
+      [
+        "cards_deckInShoe",
+        "48kb.1ch.106430287501441",
+        12082,
+        "_"
+      ],
+      [
+        "cards_cutCardInDeck",
+        "48kb.1ch.153930367262337",
+        8981,
+        "_"
+      ],
+      [
+        "cards_shoeSlider",
+        "48kb.1ch.740391127458500",
+        34659,
+        "_"
+      ],
+      [
+        "cards_deckDropOnCloth",
+        "48kb.1ch.156610585828591",
+        6366,
+        "_"
+      ],
+      [
+        "awayWins",
+        "48kb.1ch.100260643121093",
+        67710,
+        "lt"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.125501941537443",
+        89026,
+        "lt"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.375271119514301",
+        72725,
+        "lt"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.442355117310582",
+        57679,
+        "lt"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.507758713265944",
+        85264,
+        "lt"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.167170701235547",
+        47648,
+        "lt"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.381513792118070",
+        66456,
+        "lt"
+      ],
+      [
+        "drawWins",
+        "48kb.1ch.238795873771938",
+        46394,
+        "lt"
+      ],
+      [
+        "homeWins",
+        "48kb.1ch.164389537953694",
+        70218,
+        "lt"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.910564372461837",
+        72725,
+        "lt"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.164683306788755",
+        82756,
+        "fr"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.121352042246724",
+        86518,
+        "fr"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.686904325836919",
+        60187,
+        "fr"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.726372164903028",
+        62694,
+        "fr"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.665025935196886",
+        58933,
+        "fr"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.104206070567664",
+        41378,
+        "fr"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.102138339156865",
+        67710,
+        "fr"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.170567696438133",
+        56425,
+        "fr"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.635989200468809",
+        95295,
+        "fr"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.173469029704822",
+        80249,
+        "fr"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.546861954990588",
+        94041,
+        "ru"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.159174900577802",
+        81503,
+        "ru"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.181827780977276",
+        94041,
+        "ru"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.892344386647588",
+        85264,
+        "ru"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.160666338537607",
+        91534,
+        "ru"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.104209164474750",
+        41378,
+        "ru"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.104977223824913",
+        86518,
+        "ru"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.799794222736717",
+        48902,
+        "ru"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.342808705366376",
+        97803,
+        "ru"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.124197431831657",
+        112849,
+        "ru"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.119934995172731",
+        60187,
+        "no"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.140897828758643",
+        81503,
+        "no"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.158171118059402",
+        75233,
+        "no"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.737491918050070",
+        66456,
+        "no"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.595411526908416",
+        67710,
+        "no"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.108209528721132",
+        51409,
+        "no"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.155698039304556",
+        68964,
+        "no"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.921361303001732",
+        67710,
+        "no"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.196215073342877",
+        62694,
+        "no"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.420604825221890",
+        91534,
+        "no"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.148687476254875",
+        66456,
+        "ua"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.286984380061257",
+        70218,
+        "ua"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.161645017917500",
+        65202,
+        "ua"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.133597695150225",
+        56425,
+        "ua"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.372822818649232",
+        66456,
+        "ua"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.544856166013800",
+        40125,
+        "ua"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.682094797891776",
+        62694,
+        "ua"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.172732152999823",
+        40125,
+        "ua"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.288087248457804",
+        73979,
+        "ua"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.322932972528520",
+        60187,
+        "ua"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.434927102472446",
+        72725,
+        "ro"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.113445925451913",
+        52663,
+        "ro"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.558248788206780",
+        78995,
+        "ro"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.170006129196369",
+        61440,
+        "ro"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.153638566441642",
+        70218,
+        "ro"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.896245005591260",
+        53917,
+        "ro"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.126976529120189",
+        73979,
+        "ro"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.106440100685723",
+        62694,
+        "ro"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.404741907644310",
+        66456,
+        "ro"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.949474601373470",
+        92787,
+        "ro"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.762975137314163",
+        81503,
+        "he"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.187886547988611",
+        46394,
+        "he"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.506720458787220",
+        63948,
+        "he"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.515757649231329",
+        47648,
+        "he"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.213318053042970",
+        67710,
+        "he"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.180307043277300",
+        27586,
+        "he"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.151007329223419",
+        50156,
+        "he"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.498255935658956",
+        47648,
+        "he"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.184031569068014",
+        78995,
+        "he"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.179093768416460",
+        47648,
+        "he"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.757808035413005",
+        55171,
+        "en"
+      ],
+      [
+        "four",
+        "48kb.2ch.227315094094350",
+        33914,
+        "en"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.164462359063556",
+        47648,
+        "en"
+      ],
+      [
+        "two",
+        "48kb.2ch.838837337536689",
+        24398,
+        "en"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.159599812934995",
+        51409,
+        "en"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.635441751965830",
+        50156,
+        "en"
+      ],
+      [
+        "eight",
+        "48kb.2ch.170375951927136",
+        26639,
+        "en"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.109980969420901",
+        45140,
+        "en"
+      ],
+      [
+        "three",
+        "48kb.2ch.142312890615183",
+        26222,
+        "en"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.142853991872751",
+        31347,
+        "en"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.148039639077105",
+        53917,
+        "en"
+      ],
+      [
+        "five",
+        "48kb.2ch.415323459811897",
+        34317,
+        "en"
+      ],
+      [
+        "nine",
+        "48kb.2ch.737541704482446",
+        30306,
+        "en"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.107539666516198",
+        51409,
+        "en"
+      ],
+      [
+        "betsClosed",
+        "48kb.2ch.144614276681185",
+        87327,
+        "en"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.161343547980409",
+        46394,
+        "en"
+      ],
+      [
+        "seven",
+        "48kb.2ch.109595514095453",
+        28678,
+        "en"
+      ],
+      [
+        "one",
+        "48kb.2ch.161493992760855",
+        17394,
+        "en"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.826416575772552",
+        79488,
+        "en"
+      ],
+      [
+        "ten",
+        "48kb.2ch.609930349439195",
+        28350,
+        "en"
+      ],
+      [
+        "six",
+        "48kb.2ch.162820710951294",
+        35957,
+        "en"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.539034400997011",
+        66456,
+        "ka"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.137644151180742",
+        53917,
+        "ka"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.114448823328797",
+        62694,
+        "ka"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.183634275837245",
+        66456,
+        "ka"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.512215992129085",
+        65202,
+        "ka"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.166257646453509",
+        21316,
+        "ka"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.823184727494695",
+        65202,
+        "ka"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.128949792660087",
+        18809,
+        "ka"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.968771463530806",
+        72725,
+        "ka"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.115907354810970",
+        87772,
+        "ka"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.121535715383513",
+        66456,
+        "sk"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.996454905437048",
+        71472,
+        "sk"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.651393473898697",
+        68964,
+        "sk"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.177284856692963",
+        67710,
+        "sk"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.423383155622764",
+        78995,
+        "sk"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.422083133652738",
+        45140,
+        "sk"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.554194324017437",
+        71472,
+        "sk"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.123163149345730",
+        58933,
+        "sk"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.123980382167417",
+        81503,
+        "sk"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.113210068522949",
+        78995,
+        "sk"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.141482501417005",
+        75233,
+        "pl"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.115226157049009",
+        104072,
+        "pl"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.964097899162697",
+        65202,
+        "pl"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.822755537511694",
+        57679,
+        "pl"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.881142792921555",
+        62694,
+        "pl"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.689738815006623",
+        45140,
+        "pl"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.128795822976653",
+        63948,
+        "pl"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.103744317526238",
+        61440,
+        "pl"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.149792142285986",
+        82756,
+        "pl"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.570409770799918",
+        58933,
+        "pl"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.136040006235019",
+        72725,
+        "ar"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.110838318626013",
+        92787,
+        "ar"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.955818297410513",
+        67710,
+        "ar"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.879922967809716",
+        61440,
+        "ar"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.162498756896526",
+        75233,
+        "ar"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.725593893575643",
+        57679,
+        "ar"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.129794383991604",
+        68964,
+        "ar"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.967292159679313",
+        57679,
+        "ar"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.119927147069900",
+        73979,
+        "ar"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.114180414514217",
+        102818,
+        "ar"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.103700233181657",
+        45140,
+        "fl"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.729174009583244",
+        71472,
+        "fl"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.103461248321103",
+        57679,
+        "fl"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.159896044892619",
+        52663,
+        "fl"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.770295185378414",
+        58933,
+        "fl"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.622330870962339",
+        51409,
+        "fl"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.636948317831843",
+        48902,
+        "fl"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.182666189347782",
+        56425,
+        "fl"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.860282466129703",
+        45140,
+        "fl"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.162980942784077",
+        71472,
+        "fl"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.179960879573857",
+        53917,
+        "ja"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.109447479639129",
+        146704,
+        "ja"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.100794100365186",
+        68964,
+        "ja"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.109669856533068",
+        63948,
+        "ja"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.163487072925135",
+        67710,
+        "ja"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.338944024936006",
+        51409,
+        "ja"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.894161600707111",
+        65202,
+        "ja"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.146141740321762",
+        45140,
+        "ja"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.187124280563289",
+        57679,
+        "ja"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.132044706695316",
+        55171,
+        "ja"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.351230719302791",
+        80249,
+        "pt"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.792047329337926",
+        84010,
+        "pt"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.943988159595496",
+        77741,
+        "pt"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.163285664787518",
+        75233,
+        "pt"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.408246112288986",
+        76487,
+        "pt"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.976301330005508",
+        45140,
+        "pt"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.172383988816280",
+        67710,
+        "pt"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.110523582961455",
+        53917,
+        "pt"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.407172956985939",
+        90280,
+        "pt"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.514594250373974",
+        129150,
+        "pt"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.585459360461903",
+        60187,
+        "it"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.246692333623684",
+        65202,
+        "it"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.558875079136663",
+        67710,
+        "it"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.374014060835976",
+        61440,
+        "it"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.644243070787637",
+        61440,
+        "it"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.144522114491274",
+        36363,
+        "it"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.898331417630967",
+        62694,
+        "it"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.118565181341701",
+        46394,
+        "it"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.511905761445125",
+        58933,
+        "it"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.144887596903184",
+        68964,
+        "it"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.548863647545938",
+        43886,
+        "dk"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.110907685421620",
+        66456,
+        "dk"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.901145589308083",
+        47648,
+        "dk"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.107676045522765",
+        42632,
+        "dk"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.270854174451462",
+        48902,
+        "dk"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.122048593906579",
+        35109,
+        "dk"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.736715682211542",
+        38871,
+        "dk"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.782591269551873",
+        38871,
+        "dk"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.147832948156012",
+        43886,
+        "dk"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.851139093117648",
+        61440,
+        "dk"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.895883375848522",
+        86518,
+        "el"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.633003488413828",
+        107834,
+        "el"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.149832992072873",
+        67710,
+        "el"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.570647656497755",
+        67710,
+        "el"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.148592509149186",
+        80249,
+        "el"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.577404590989439",
+        43886,
+        "el"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.146632406062460",
+        70218,
+        "el"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.373263895323445",
+        52663,
+        "el"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.789642952100076",
+        82756,
+        "el"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.138376949646158",
+        126642,
+        "el"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.705481996159140",
+        60187,
+        "es"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.148291682627649",
+        57679,
+        "es"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.121581883602481",
+        61440,
+        "es"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.620269847361261",
+        55171,
+        "es"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.228664467053507",
+        60187,
+        "es"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.165492305045727",
+        38871,
+        "es"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.982078639711076",
+        55171,
+        "es"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.209109597635240",
+        45140,
+        "es"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.177922953010219",
+        52663,
+        "es"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.257097211019192",
+        94041,
+        "es"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.599450416863325",
+        82756,
+        "hi"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.169735277394561",
+        58933,
+        "hi"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.171611773797559",
+        76487,
+        "hi"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.127492083857964",
+        67710,
+        "hi"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.109103161290717",
+        71472,
+        "hi"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.321563148920366",
+        35109,
+        "hi"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.918124978663886",
+        71472,
+        "hi"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.103118672724490",
+        63948,
+        "hi"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.270310576433919",
+        78995,
+        "hi"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.133065593100190",
+        81503,
+        "hi"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.582769324520530",
+        71472,
+        "hr"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.483593156083463",
+        80249,
+        "hr"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.658660396982019",
+        71472,
+        "hr"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.223005110246001",
+        100311,
+        "hr"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.112908589599228",
+        78995,
+        "hr"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.125991241855698",
+        50156,
+        "hr"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.546670905312189",
+        91534,
+        "hr"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.956660082326204",
+        62694,
+        "hr"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.878744173902919",
+        66456,
+        "hr"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.115823438608174",
+        90280,
+        "hr"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.358375225760900",
+        68964,
+        "cs"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.107827438115308",
+        86518,
+        "cs"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.103205378264540",
+        70218,
+        "cs"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.836837296730623",
+        56425,
+        "cs"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.790811800760733",
+        77741,
+        "cs"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.885606556093761",
+        41378,
+        "cs"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.146551340717396",
+        62694,
+        "cs"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.601607577347698",
+        50156,
+        "cs"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.120111363018382",
+        76487,
+        "cs"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.125327016433393",
+        102818,
+        "cs"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.401963660272882",
+        48902,
+        "cn"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.656620183265920",
+        85264,
+        "cn"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.169814925124989",
+        47648,
+        "cn"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.848372270372313",
+        46394,
+        "cn"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.111561022162917",
+        47648,
+        "cn"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.123903991339651",
+        89026,
+        "cn"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.914973036531090",
+        38871,
+        "cn"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.146990792350068",
+        36363,
+        "cn"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.520641669478511",
+        47648,
+        "cn"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.297672846173463",
+        55171,
+        "cn"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.160085601802530",
+        68964,
+        "sl"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.127064067617569",
+        85264,
+        "sl"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.276957816043783",
+        70218,
+        "sl"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.152854002897750",
+        57679,
+        "sl"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.163554076750668",
+        71472,
+        "sl"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.131099336761086",
+        81503,
+        "sl"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.159057228838419",
+        63948,
+        "sl"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.371245641108270",
+        70218,
+        "sl"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.459877573952239",
+        70218,
+        "sl"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.337127353093554",
+        78995,
+        "sl"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.168679893323476",
+        78995,
+        "fi"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.353305092925941",
+        85264,
+        "fi"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.396142066600352",
+        77741,
+        "fi"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.598892282369084",
+        75233,
+        "fi"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.932383135413735",
+        81503,
+        "fi"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.105524417094209",
+        41378,
+        "fi"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.122679500229021",
+        89026,
+        "fi"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.140762376725321",
+        48902,
+        "fi"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.680568437132474",
+        73979,
+        "fi"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.985178459419202",
+        75233,
+        "fi"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.671325566405555",
+        76487,
+        "ca"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.640985718008050",
+        72725,
+        "ca"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.127968668025083",
+        81503,
+        "ca"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.171528354003936",
+        72725,
+        "ca"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.117991883009658",
+        81503,
+        "ca"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.570685608056830",
+        42632,
+        "ca"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.171382172437065",
+        68964,
+        "ca"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.489583893203496",
+        75233,
+        "ca"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.132821640696938",
+        80249,
+        "ca"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.889606149380137",
+        90280,
+        "ca"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.156945497534387",
+        52663,
+        "th"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.151083993251235",
+        60187,
+        "th"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.164352358689877",
+        45140,
+        "th"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.419700905044907",
+        38871,
+        "th"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.108841915306537",
+        43886,
+        "th"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.795802108831675",
+        38871,
+        "th"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.139720837729437",
+        43886,
+        "th"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.647420977530719",
+        73979,
+        "th"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.912063688389596",
+        53917,
+        "th"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.106097783045896",
+        85264,
+        "th"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.919653212885997",
+        105326,
+        "tr"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.143458831737187",
+        76487,
+        "tr"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.524825674124889",
+        87772,
+        "tr"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.146267196808304",
+        82756,
+        "tr"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.453732080394118",
+        84010,
+        "tr"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.169016583530696",
+        62694,
+        "tr"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.138616905219021",
+        78995,
+        "tr"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.799524783132333",
+        53917,
+        "tr"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.543458174464257",
+        110342,
+        "tr"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.154886282230854",
+        126642,
+        "tr"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.171199765132323",
+        35109,
+        "vi"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.100872011692692",
+        37617,
+        "vi"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.156814320075980",
+        40125,
+        "vi"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.235025291042105",
+        35109,
+        "vi"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.179533413482902",
+        40125,
+        "vi"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.937642213136649",
+        26332,
+        "vi"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.360124929970896",
+        36363,
+        "vi"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.157540175758673",
+        23824,
+        "vi"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.103026985958562",
+        43886,
+        "vi"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.135922005027995",
+        45140,
+        "vi"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.174605218705954",
+        61440,
+        "lv"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.266925394643906",
+        75233,
+        "lv"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.118416699161203",
+        75233,
+        "lv"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.142251613037246",
+        58933,
+        "lv"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.110335867901340",
+        73979,
+        "lv"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.887046216224844",
+        42632,
+        "lv"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.164568230281985",
+        60187,
+        "lv"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.247867092545356",
+        43886,
+        "lv"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.512951948708895",
+        67710,
+        "lv"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.164823233733624",
+        65202,
+        "lv"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.160546862917542",
+        96549,
+        "hy"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.141264552311446",
+        101565,
+        "hy"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.174098371677169",
+        87772,
+        "hy"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.157535615493323",
+        73979,
+        "hy"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.104008734509451",
+        78995,
+        "hy"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.179631931590582",
+        56425,
+        "hy"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.141226390353406",
+        73979,
+        "hy"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.152410788084783",
+        55171,
+        "hy"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.510635655265016",
+        101565,
+        "hy"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.166378335866603",
+        90280,
+        "hy"
+      ],
+      [
+        "awayWins",
+        "48kb.1ch.177448180061187",
+        81503,
+        "id"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.919452525620082",
+        70218,
+        "id"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.378985887429570",
+        67710,
+        "id"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.105506255987455",
+        58933,
+        "id"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.288965648314315",
+        63948,
+        "id"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.170665443451538",
+        36363,
+        "id"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.150793901484775",
+        56425,
+        "id"
+      ],
+      [
+        "drawWins",
+        "48kb.1ch.124015137461641",
+        41378,
+        "id"
+      ],
+      [
+        "homeWins",
+        "48kb.1ch.149940090343516",
+        78995,
+        "id"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.119196130317335",
+        86518,
+        "id"
+      ],
+      [
+        "awayWins",
+        "48kb.1ch.141713136686338",
+        58933,
+        "et"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.840167984533239",
+        50156,
+        "et"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.122370466451068",
+        58933,
+        "et"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.227499686221987",
+        53917,
+        "et"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.547846739321287",
+        56425,
+        "et"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.160949360645933",
+        33855,
+        "et"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.111362736971633",
+        60187,
+        "et"
+      ],
+      [
+        "drawWins",
+        "48kb.1ch.831159037584450",
+        53917,
+        "et"
+      ],
+      [
+        "homeWins",
+        "48kb.1ch.641597597408555",
+        55171,
+        "et"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.139767376228369",
+        56425,
+        "et"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.205530033345165",
+        73979,
+        "mn"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.189020196030710",
+        84010,
+        "mn"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.110428642663284",
+        68964,
+        "mn"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.792078618912947",
+        60187,
+        "mn"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.148991625283681",
+        67710,
+        "mn"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.150835670355185",
+        37617,
+        "mn"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.550545492345048",
+        57679,
+        "mn"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.176600882996885",
+        40125,
+        "mn"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.588709794260520",
+        66456,
+        "mn"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.161981827739999",
+        71472,
+        "mn"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.424446180151701",
+        75233,
+        "al"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.170291409525592",
+        78995,
+        "al"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.267112603891734",
+        58933,
+        "al"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.157721514892983",
+        53917,
+        "al"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.805644107725606",
+        61440,
+        "al"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.363137407864034",
+        45140,
+        "al"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.155695214437564",
+        65202,
+        "al"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.164026114668057",
+        58933,
+        "al"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.117492850439840",
+        63948,
+        "al"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.651057100233271",
+        84010,
+        "al"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.121713672885536",
+        75233,
+        "sr"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.167738601609928",
+        116611,
+        "sr"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.102262217800947",
+        76487,
+        "sr"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.135421676368941",
+        72725,
+        "sr"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.130138139723176",
+        80249,
+        "sr"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.143313081799603",
+        58933,
+        "sr"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.144447986110961",
+        75233,
+        "sr"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.270737383381762",
+        62694,
+        "sr"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.148475976501215",
+        87772,
+        "sr"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.499786821432939",
+        110342,
+        "sr"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.164008425050510",
+        57679,
+        "de"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.587078588107531",
+        84010,
+        "de"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.136417877983384",
+        51409,
+        "de"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.434070667312784",
+        48902,
+        "de"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.267440374862825",
+        50156,
+        "de"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.503462233465637",
+        47648,
+        "de"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.176082746488262",
+        52663,
+        "de"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.133413936651921",
+        51409,
+        "de"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.116959588634458",
+        45140,
+        "de"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.702961949073892",
+        86518,
+        "de"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.364396810648610",
+        84010,
+        "ko"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.181282947440333",
+        67710,
+        "ko"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.167287303360007",
+        68964,
+        "ko"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.113746143589955",
+        71472,
+        "ko"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.139958966348669",
+        67710,
+        "ko"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.698237062862976",
+        51409,
+        "ko"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.588937486851859",
+        68964,
+        "ko"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.181675969338225",
+        43886,
+        "ko"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.113161608562771",
+        70218,
+        "ko"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.338430972790795",
+        55171,
+        "ko"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.111042430363325",
+        53917,
+        "sv"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.773641295034992",
+        56425,
+        "sv"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.177728541080064",
+        72725,
+        "sv"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.193026840857509",
+        51409,
+        "sv"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.921994520081436",
+        62694,
+        "sv"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.525713076562585",
+        46394,
+        "sv"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.216531999001570",
+        60187,
+        "sv"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.184407508976125",
+        60187,
+        "sv"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.152837246141966",
+        48902,
+        "sv"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.949453779868260",
+        73979,
+        "sv"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.173585972772883",
+        58933,
+        "bg"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.479252158426772",
+        95295,
+        "bg"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.507840999042416",
+        63948,
+        "bg"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.687292773860258",
+        58933,
+        "bg"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.169609953698561",
+        65202,
+        "bg"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.913568790345427",
+        47648,
+        "bg"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.147962424709450",
+        65202,
+        "bg"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.175348307566555",
+        76487,
+        "bg"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.579300721219348",
+        55171,
+        "bg"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.632367371555038",
+        105326,
+        "bg"
+      ],
+      [
+        "awayWins",
+        "48kb.1ch.495316215030388",
+        98568,
+        "bp"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.160010269306535",
+        98568,
+        "bp"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.121425291404773",
+        98568,
+        "bp"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.178597502270508",
+        73608,
+        "bp"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.152245327520520",
+        73608,
+        "bp"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.882068043252463",
+        73608,
+        "bp"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.124762099958156",
+        73608,
+        "bp"
+      ],
+      [
+        "drawWins",
+        "48kb.1ch.882068043252463",
+        73608,
+        "bp"
+      ],
+      [
+        "homeWins",
+        "48kb.1ch.133512615319020",
+        98568,
+        "bp"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.282339924449198",
+        148488,
+        "bp"
+      ],
+      [
+        "awayWins",
+        "48kb.2ch.216515487809421",
+        35109,
+        "nl"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.2ch.154762442305205",
+        38871,
+        "nl"
+      ],
+      [
+        "playerWins",
+        "48kb.2ch.161604545209102",
+        50156,
+        "nl"
+      ],
+      [
+        "tigerWins",
+        "48kb.2ch.111363885043235",
+        43886,
+        "nl"
+      ],
+      [
+        "bankerWins",
+        "48kb.2ch.118428551560362",
+        47648,
+        "nl"
+      ],
+      [
+        "tieWins",
+        "48kb.2ch.619018711781312",
+        38871,
+        "nl"
+      ],
+      [
+        "dragonWins",
+        "48kb.2ch.147556501410590",
+        40125,
+        "nl"
+      ],
+      [
+        "drawWins",
+        "48kb.2ch.277171639233073",
+        58933,
+        "nl"
+      ],
+      [
+        "homeWins",
+        "48kb.2ch.133703533384044",
+        38871,
+        "nl"
+      ],
+      [
+        "placebets",
+        "48kb.2ch.690808160174067",
+        86518,
+        "nl"
+      ],
+      [
+        "awayWins",
+        "48kb.1ch.241585718698110",
+        71472,
+        "hu"
+      ],
+      [
+        "suitedTieWins",
+        "48kb.1ch.619216052239452",
+        105326,
+        "hu"
+      ],
+      [
+        "playerWins",
+        "48kb.1ch.130225602776739",
+        70218,
+        "hu"
+      ],
+      [
+        "tigerWins",
+        "48kb.1ch.136311377465571",
+        62694,
+        "hu"
+      ],
+      [
+        "bankerWins",
+        "48kb.1ch.147767634443378",
+        56425,
+        "hu"
+      ],
+      [
+        "tieWins",
+        "48kb.1ch.173620952117405",
+        61440,
+        "hu"
+      ],
+      [
+        "dragonWins",
+        "48kb.1ch.179863660840000",
+        75233,
+        "hu"
+      ],
+      [
+        "drawWins",
+        "48kb.1ch.365388282469271",
+        62694,
+        "hu"
+      ],
+      [
+        "homeWins",
+        "48kb.1ch.874610754072421",
+        66456,
+        "hu"
+      ],
+      [
+        "placebets",
+        "48kb.1ch.546973812899428",
+        78995,
+        "hu"
+      ]
+    ]
+  },
+  "meta": {
+    "game": "evo-baccarat-goldenwealth-rng",
+    "author": "@fmartinz",
+    "version": "4.1.1",
+    "description": "",
+    "created": "2025-01-02T13:09:27.875Z",
+    "tags": [],
+    "constants": {
+      "sourceNames": [
+        "awayWins",
+        "bankerWins",
+        "betsClosed",
+        "betsClosing",
+        "cards_cardFlip",
+        "cards_cardsInHolder",
+        "cards_cutCardInDeck",
+        "cards_cutCardOutOfDeck",
+        "cards_deckDropOnCloth",
+        "cards_deckDropOnDeck",
+        "cards_deckInShoe",
+        "cards_deckOutOfShoe",
+        "cards_moveDeck",
+        "cards_moveDeckShort",
+        "cards_riffle",
+        "cards_shoeSlider",
+        "cards_slideCardFromShoe",
+        "cardsFly",
+        "chipstack",
+        "clickingFail",
+        "clickUIButton",
+        "coinsFly",
+        "dragonWins",
+        "drawWins",
+        "eight",
+        "feePercent1",
+        "feePercent2",
+        "feePercent3",
+        "feePercent4",
+        "five",
+        "four",
+        "fpBaccaratMusic_loop_stereo",
+        "goldenOpenPot",
+        "goldenshimmer",
+        "homeWins",
+        "nine",
+        "one",
+        "openPopup",
+        "particlesFlyFromCard1",
+        "particlesFlyFromCard2",
+        "particlesFlyFromCard3",
+        "particlesFlyFromCard4",
+        "particlesFlyFromFee",
+        "placebets",
+        "placeChip",
+        "playerWins",
+        "repeatDouble",
+        "selectChip",
+        "seven",
+        "six",
+        "startAutoPlay",
+        "suitedTieWins",
+        "tap",
+        "ten",
+        "three",
+        "tieWins",
+        "tigerWins",
+        "timerTick",
+        "two",
+        "undo",
+        "winCounterEnd",
+        "winCounterLoop"
+      ],
+      "busNames": [
+        "effects",
+        "voice",
+        "music",
+        "master"
+      ],
+      "syncerNames": [],
+      "stealerNames": [
+        "winCounterLoop"
+      ],
+      "bufferNames": [
+        "awayWins",
+        "bankerWins",
+        "dragonWins",
+        "drawWins",
+        "homeWins",
+        "placebets",
+        "playerWins",
+        "suitedTieWins",
+        "tieWins",
+        "tigerWins",
+        "goldenshimmer",
+        "cards_cardFlip",
+        "cards_cardsInHolder",
+        "cards_cutCardInDeck",
+        "cards_cutCardOutOfDeck",
+        "cards_deckDropOnCloth",
+        "cards_deckDropOnDeck",
+        "cards_deckInShoe",
+        "cards_deckOutOfShoe",
+        "cards_moveDeck",
+        "cards_moveDeckShort",
+        "cards_shoeSlider",
+        "cards_slideCardFromShoe",
+        "tap",
+        "betsClosing",
+        "cardsFly",
+        "coinsFly",
+        "particlesFlyFromFee",
+        "goldenOpenPot",
+        "WinCountupLoop",
+        "WinCountupLoopEnd"
+      ],
+      "bufferStopNames": [
+        "timerTick",
+        "chipstack",
+        "placeChip",
+        "selectChip",
+        "clickingFail",
+        "startAutoPlay",
+        "openPopup",
+        "undo",
+        "repeatDouble",
+        "clickUIButton"
+      ],
+      "containerNames": [
+        "cards_riffle",
+        "cards_deckDropOnDeck",
+        "cards_moveDeck",
+        "cards_moveDeckShort",
+        "feePercent",
+        "particlesFlyFromCard"
+      ]
+    }
+  }
+}
