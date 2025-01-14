@@ -57,35 +57,27 @@ export async function get_config(url:string,cookies:any,setup:any,config:any){
      
     let res = await Promise.all([
         page.goto(url +"&game=baccarat"),
-        // page.route(/.*\.(png|jpg|jpeg|gif|webp|svg|ico)$/, async route => {
-        //     await route.fulfill({
-        //         status: 200,
-        //         contentType: 'image/svg+xml',
-        //         body:  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"></svg>'
-        //     });
-        // }),
+       
       
         
       
         page.waitForRequest( ss => ss.url().includes("live1.egcvi.com")),
-         setTimeout(() => {
-            return page.reload()
-        }, 200)
-        // page.route(/.*\/setup\?client_version.*/, async route => {
-        //     await route.fulfill({
-        //         status: 200,
-        //         contentType: 'application/json', 
-        //         body: setup
-        //     });
-        // }),
+  
+        page.route(/.*\/setup\?client_version.*/, async route => {
+            await route.fulfill({
+                status: 200,
+                contentType: 'application/json', 
+                body: setup
+            });
+        }),
         
-        // page.route(/.*\/config\?*/, async route => {
-        //     await route.fulfill({
-        //         status: 200,
-        //         contentType: 'application/json', 
-        //         body: config
-        //     });
-        // }),
+        page.route(/.*\/config\?*/, async route => {
+            await route.fulfill({
+                status: 200,
+                contentType: 'application/json', 
+                body: config
+            });
+        }),
     ]);
 
     
@@ -102,7 +94,7 @@ export async function get_config(url:string,cookies:any,setup:any,config:any){
 
    
 
- 
+    await context.close()
     await page.close()
      
     return { video   ,metrics: metrics || null}

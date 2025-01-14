@@ -5,12 +5,13 @@ use serde::{Deserialize, Serialize};
 
 
 #[derive(Debug, Serialize, Deserialize,Clone)]
-pub struct VideoLinksModel {
+pub struct MetriLinksModel {
     pub _id: ObjectId,
-    pub url: String,
- 
+    pub metrics: String,
     pub table_id: String,
-    pub other_id: Option<String>, 
-  
+    pub username: String,
+    pub is_lock: bool,
+    pub lock_time: Option<DateTime>,
+    
 }
 

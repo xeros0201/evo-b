@@ -2,7 +2,7 @@ use std::{str::FromStr, sync::Arc};
 
 use axum::{extract::{ws::{Message, WebSocket}, Path, Query, State, WebSocketUpgrade}, response::IntoResponse};
 use futures::{SinkExt, StreamExt};
-use http::{header::{ORIGIN, REFERER}, Uri};
+use http::  Uri;
 use native_tls::TlsConnector;
 use serde::{Deserialize, Serialize};
 use tokio_tungstenite::{connect_async_tls_with_config, tungstenite::{handshake::client::generate_key, ClientRequestBuilder}, Connector};
@@ -32,7 +32,7 @@ pub struct StreamQuery {
 pub async fn stream( 
     Path(path): Path<String>,
     ws: WebSocketUpgrade,
-    State(state): State<Arc<AppState>>,
+ 
     Query(query): Query<StreamQuery>,
 ) -> impl IntoResponse {
      

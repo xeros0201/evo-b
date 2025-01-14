@@ -1,4 +1,4 @@
-use std::{sync::Arc, time::{Duration, Instant}};
+use std::{sync::Arc, time::Duration};
 
 use axum::{
     debug_handler,
@@ -6,16 +6,15 @@ use axum::{
         ws::{Message, WebSocket},
         Path, Query, State, WebSocketUpgrade,
     },
-    response::IntoResponse, Json,
+    response::IntoResponse
 };
 use axum_extra::extract::CookieJar;
-use cached::proc_macro::cached;
+ 
 use futures::{SinkExt, StreamExt};
 use itertools::Itertools;
 use native_tls::TlsConnector;
 use serde::Deserialize;
  
-use serde_json::json;
 use tokio_tungstenite::{
     connect_async_tls_with_config,
     tungstenite::{handshake::client::generate_key, ClientRequestBuilder},
@@ -23,8 +22,8 @@ use tokio_tungstenite::{
 };
 
 use crate::{
-    api::setup::{get_cookies, get_setup_cache, A},
-    app_state::{AppState, PreFetchConfigState},
+    api::setup::get_cookies,
+    app_state::AppState,
     constance::{
         cookies::COOKIE_EVOSESSIONID,
         uri::{TARGET_URL, TARTGET_DOMAIN},
@@ -234,6 +233,7 @@ async fn handle_upgrade(
                     metric_res.args.result
                 );
                 metric_res.args.result = metrics_value.to_string() ;
+                
                 write
                     .send(tokio_tungstenite::tungstenite::Message::text(
                         serde_json::to_string(&metric_res).expect("Fail convert to string"),

@@ -15329,26 +15329,7 @@
                     id: B,
                     ref: Y,
                     onMouseEnter: () => {
-                        let cookies = document.cookie.split(';');
-                     
-                        let rs =  cookies.find(cookie => {
-                                let [name, value] = cookie.trim().split('=');
-                              
-                                let newname = decodeURIComponent(name);
-                                 if(newname === link) return value
-                            });
-                      
-                        if(rs) return
-                        if (link) {
-                           
-                                fetch(link, {
-                                    method: "GET", 
-                                    credentials: "same-origin"
-                                });
-                          
 
-                             
-                        }
                     },
                     children: J(W, q)
                 })
@@ -15358,48 +15339,68 @@
                 return Q.jsx(Q.Fragment, {
                     children: q.map(( (q, Y) => {
                         let checker = q
-                        let isNumber  = Number(checker)
+                        let isNumber = Number(checker)
                         let table_info = q.split(":")
-                      
-                        let table_id =table_info[0]
-      
-                        let version =  window.BUNDLE_MANIFEST.version
+                        let table_id = table_info[0]
+                        let version = window.BUNDLE_MANIFEST.version
                         let link = null
-                    
-                        if( isNaN(isNumber)   ){
-                            
-                            link =    tables[table_id]  ? `/pre_fetch_config?table_id=${table_id}&vt_id=${tables[table_id] }&client_version=${version}` : `/pre_fetch_config?table_id=${table_id}&client_version=${version}` 
-                           
-                        }
-                
-                      
-                      
-                        const m = B(W ? Rb.A(q, W, Y) : q)
-                    
-                        const $ = m === B(O);
-                               
                         
-                       
+                        if(isNaN(isNumber)) {
+                            link = tables[table_id] ? 
+                                `/pre_fetch_config?table_id=${table_id}&vt_id=${tables[table_id]}&client_version=${version}` : 
+                                `/pre_fetch_config?table_id=${table_id}&client_version=${version}`
+                        }
+
+                        const m = B(W ? Rb.A(q, W, Y) : q)
+                        const $ = m === B(O);
 
                         return Q.jsx(Mb, {
                             id: m,
                             index: Y,
                             item: q,
                             table_info,
-                            link:link,
+                            link: link,
                             onMount: (id, element) => {
- 
-                                if (L) L(id, element);
+                                // Check if element is in viewport
+                                const observer = new IntersectionObserver((entries) => {
+                               
+                                    entries.forEach(entry => {
+                                        if(entry.isIntersecting) {
+                                            
+                                            let cookies = document.cookie.split(';');
+                     
+                                            let rs =  cookies.find(cookie => {
+                                                    let [name, value] = cookie.trim().split('=');
+                                                  
+                                                    let newname = decodeURIComponent(name);
+                                                     if(newname === link) return value
+                                                });
+                                          
+                                            if(rs) return
+                                            if (link) {
+                                               
+                                                    axios.get(link, {
+                                                       
+                                                        credentials: "same-origin"
+                                                    });
+                                              
+                    
+                                                 
+                                            }
+                                        }
+                                    })
+                                })
+                                
+                                observer.observe(element)
+                                if(L) L(id, element)
                             },
                             onUnmount: (id) => {
-                               
-                                if (l) l(id); 
+                                if(l) l(id)
                             },
-                            ref: $ ? A : null,
+                            ref: $ ? A : null, 
                             render: J
                         }, m)
-                    }
-                    ))
+                    }))
                 })
             }
             )))

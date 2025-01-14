@@ -3,7 +3,7 @@ use std::sync::Arc;
 use axum::debug_handler;
 use axum::extract::State;
 use axum::{extract::Query, response::IntoResponse};
-use axum::{http::StatusCode, Json};
+use axum::http::StatusCode;
 use axum_extra::extract::CookieJar;
 
 use reqwest::Client;

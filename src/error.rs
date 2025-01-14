@@ -1,8 +1,7 @@
 use axum::{Json, http::StatusCode, response::IntoResponse};
 use serde_json::json;
 use std::{collections::HashMap, fmt::Display};
-
-pub type Result<T> = core::result::Result<T, Error>;
+ 
 
 pub struct ErrorResponse {
     pub status: StatusCode,

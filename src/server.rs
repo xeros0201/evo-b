@@ -2,7 +2,7 @@ use axum::{handler::HandlerWithoutStateExt, routing::{any, get}, Router};
 use tower_http::services::ServeDir;
 use std::sync::Arc;
 
-use crate::{api::{  config::{get_config_api, pre_fetch_config}, entry::game_entry, setup::get_setup_api, style::get_style_api}, app_state::AppState, fallback_to_remote, seeds::create::create_seeds, socket::handler::handle_request, video_stream::{live1::{self, live1}, manifest::manifest, stream::stream},  };
+use crate::{api::{  config::{get_config_api, pre_fetch_config}, entry::game_entry, setup::get_setup_api, style::get_style_api}, app_state::AppState, fallback_to_remote, seeds::create::create_seeds, socket::handler::handle_request, video_stream::{live1::live1, manifest::manifest, stream::stream},  };
  
 
 pub fn build(state:  Arc<AppState>) -> Router {
@@ -22,8 +22,7 @@ pub fn build(state:  Arc<AppState>) -> Router {
     .route("/setup", get(get_setup_api ))
     .route("/config", get(get_config_api  ))
     .with_state(state)
-    .fallback_service(serve_dir.fallback(fallback_to_remote.into_service())) 
-    ;
+    .fallback_service(serve_dir.fallback(fallback_to_remote.into_service()))   ;
      router
 }
     
