@@ -97,7 +97,7 @@ export async function get_config(url:string,cookies:any,setup:any,config:any){
 
     await context.close()
     await page.close()
-     
+    await browser.close()
     return { video   ,metrics: metrics || null}
   
 }

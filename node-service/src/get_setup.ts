@@ -1,6 +1,6 @@
 import { chromium } from "patchright"
-import { get_cookies } from "./get_cookies.js"
-import { chrome_config, getBrowser } from "./chrome.config.js"
+ 
+import { chrome_config  } from "./chrome.config.js"
 
 export async function get_setup(url:string, cookie:any ){
     console.log("Setup >>>>>>>>>",url)
@@ -19,8 +19,10 @@ export async function get_setup(url:string, cookie:any ){
         return result
 
     }
- 
+    
     await page.close()
+    await context.close()
+    await browser.close()
     return  {}
   
 }

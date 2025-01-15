@@ -28,6 +28,8 @@ export async function get_entry(url:string ){
     }
    
     await page.close()
+    await context.close()
+    await browser.close()
     return  []
   
 }
