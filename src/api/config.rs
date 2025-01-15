@@ -145,8 +145,6 @@ pub async fn get_config_api(
 
         }
          
-
-       
     }
 
 
@@ -155,7 +153,7 @@ pub async fn get_config_api(
 
     let username_clone = username.clone().to_string();
     if !IGNORE_TABLE.contains(&table_id.as_str()) {
-        tokio::spawn(async move {
+     let _ =   tokio::spawn(async move {
             let mut metrics_cache_check = state.cache_check.lock().await;
             metrics_cache_check.insert(table_username.clone(), false);
             drop(metrics_cache_check);
@@ -168,7 +166,7 @@ pub async fn get_config_api(
             let mongo = state.mongodb.lock();
             let metrics_cache_check_un = state.cache_check.lock();
             if metrics.get("metrics").is_some() {
-                let (mut metrics_lock, mut video_lock, mut metrics_cache_check,mut mongodb) =
+                let (mut metrics_lock, mut video_lock, mut metrics_cache_check, mongodb) =
                     tokio::join!(metrics_un, video_un, metrics_cache_check_un,mongo);
                 metrics_lock.insert(
                     table_username.clone(),
@@ -211,7 +209,7 @@ pub async fn get_config_api(
                 drop(metrics_cache_check);
                 drop(metrics_lock);
             }
-        });
+        }).await;
     };
 
     let duration = timer.elapsed();
@@ -220,11 +218,11 @@ pub async fn get_config_api(
       Json(Some(config_b))
 }
 
-#[cached(
-    ty = "TimedCache<(String, String,String),   serde_json::Value >",
-    create = "{ TimedCache::with_lifespan(3600) }",
-    convert = r#"{ (target_url.clone(), evo_ss.clone(),username.clone()) }"#
-)]
+// #[cached(
+//     ty = "TimedCache<(String, String,String),   serde_json::Value >",
+//     create = "{ TimedCache::with_lifespan(3600) }",
+//     convert = r#"{ (target_url.clone(), evo_ss.clone(),username.clone()) }"#
+// )]
 async fn get_config_cache(
     target_url: String,
     evo_ss: String,

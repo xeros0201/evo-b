@@ -36,7 +36,7 @@ mod db;
 mod model;
 pub mod socket;
 mod video_stream;
-const PORT: u16 = 8001;
+const PORT: u16 = 3000;
 
 async fn fallback_to_remote(uri: Uri) -> Response<Body> {
    

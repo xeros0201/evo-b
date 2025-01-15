@@ -104,30 +104,6 @@ async fn handle_upgrade(
 ) -> anyhow::Result<()> {
     let (mut sender, mut receiver) = socket.split();
     
-  
-    let mut attempts = 0;
-    let max_attempts = 4;
-    
-    loop {
-        let  metrics_cache_check = state.cache_check.lock().await;
-        let check_state  = metrics_cache_check.get(&table_username ).unwrap_or(&false);
-        
-        if *check_state {
-            break;
-        }
-
-        tracing::info!("DEBUG: check_state: {:?}", check_state);
-   
-        drop(metrics_cache_check);
-        
-        attempts += 1;
-        if attempts >= max_attempts {
-            break;
-        }
-        
-        tokio::time::sleep(Duration::from_secs(2)).await;
-    }
- 
     let primary_address = match determine_primary_address(
         format!("public/{game_type}/player/game/{table_id}/{service}").as_str(),
         &query,

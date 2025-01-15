@@ -15377,16 +15377,7 @@
                                                 });
                                           
                                             if(rs) return
-                                            if (link) {
-                                               
-                                                    axios.get(link, {
-                                                       
-                                                        credentials: "same-origin"
-                                                    });
-                                              
-                    
-                                                 
-                                            }
+                                            
                                         }
                                     })
                                 })

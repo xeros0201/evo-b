@@ -202,11 +202,11 @@ pub async fn get_setup_api(
     (jar, Json(Some(setup_a)))
 }
 
-#[cached(
-    ty = "TimedCache<(String, String, String),  A >",
-    create = "{ TimedCache::with_lifespan(3600) }",
-    convert = r#"{ (url.clone(), evo_ss.clone(),username.clone()) }"#
-)]
+// #[cached(
+//     ty = "TimedCache<(String, String, String),  A >",
+//     create = "{ TimedCache::with_lifespan(3600) }",
+//     convert = r#"{ (url.clone(), evo_ss.clone(),username.clone()) }"#
+// )]
 pub async fn get_setup_cache(
     url: String,
     evo_ss: String,
@@ -242,11 +242,11 @@ pub async fn get_setup_cache(
     setup_a
 }
 
-#[cached(
-    ty = "TimedCache<(String, String  ), Vec<playwright::api::Cookie> >",
-    create = "{ TimedCache::with_lifespan(3600) }",
-    convert = r#"{ (evo_ss.clone(), username.clone() ) }"#
-)]
+// #[cached(
+//     ty = "TimedCache<(String, String  ), Vec<playwright::api::Cookie> >",
+//     create = "{ TimedCache::with_lifespan(3600) }",
+//     convert = r#"{ (evo_ss.clone(), username.clone() ) }"#
+// )]
 pub async fn get_cookies(
     evo_ss: String,
     username: String,

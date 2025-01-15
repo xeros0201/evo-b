@@ -1,6 +1,6 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { get_config, get_config_by_worker, get_config_first } from './get_config.js'
+import { get_config,  get_config_first } from './get_config.js'
 import { logger } from 'hono/logger'
 import { get_entry } from './get_entry.js'
 import { get_setup } from './get_setup.js'

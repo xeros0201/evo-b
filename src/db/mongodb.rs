@@ -15,7 +15,7 @@ pub struct MongoDB {
 
 impl MongoDB {
     pub async fn init() -> Self {
-        let uri ="mongodb://root:GPMmafJr7cez5HQhCMPx3TqACjgVs43eYsy7cxKaBwCyLQcAAYRFlWXReq0mX0qv@157.173.105.10:5432/?directConnection=true";
+        let uri ="mongodb://circle-beezsbee:asdwqe123@43.201.214.179:27017/bnkevo?authSource=admin";
         let client = Client::with_uri_str(uri).await.unwrap();
         let db = client.database("video_evo_b");
         let video_links: Collection<VideoLinksModel> = db.collection("video_links");

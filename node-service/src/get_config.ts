@@ -3,8 +3,9 @@ import path from "path";
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { chrome_config, getBrowser } from "./chrome.config.js";
+ 
 import { chromium } from "patchright";
+import { chrome_config } from "./chrome.config.js";
 
 // Add these lines near the top of the file with other imports
 const __filename = fileURLToPath(import.meta.url);
@@ -101,27 +102,7 @@ export async function get_config(url:string,cookies:any,setup:any,config:any){
   
 }
 
-export async function get_config_by_worker(url: string, cookies: any, setup: any, config: any) {
-    return new Promise((resolve, reject) => {
-        const worker = new Worker(path.join(__dirname, 'config.worker.js'), {
-            workerData: { url, cookies, setup, config }
-        });
-
-        worker.on('message', (result) => {
-            resolve(result);
-        });
-
-        worker.on('error', (error) => {
-            reject(error);
-        });
-
-        worker.on('exit', (code) => {
-            if (code !== 0) {
-                reject(new Error(`Worker stopped with exit code ${code}`));
-            }
-        });
-    });
-}
+ 
 
 
 
